@@ -1,0 +1,556 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "_id": "string",
+    "agent_id": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "audioMetadata": {
+        "audio_type": "string",
+        "bitrate": "double",
+        "duration": "double",
+        "filename": "string",
+        "num_channels": "bigint",
+        "sample_rate": "double",
+        "audio-bitrate": "string",
+        "audio-duration": "double",
+        "audio-num-channels": "string",
+        "audio-sample-rate": "string",
+        "callRecordId": "string",
+        "sha256": "string"
+    },
+    "borrower_id": "string",
+    "callMetadata": {
+        "date": "string",
+        "origName": "string",
+        "redaction_type": "string",
+        "AGENTID": "string",
+        "DURATION": "string",
+        "FILENAME": "string",
+        "IS_REDACTED": "boolean",
+        "PROCESS": "string",
+        "RECORDINGCALLID": "string",
+        "REDACTED_CHUNKS": "bigint",
+        "REDACTED_TRANSCRIPT": "string",
+        "REDACTION_LENGTH": "double",
+        "RESULTCODE": "string",
+        "RESULTID": "string",
+        "UNIQUECALLID": "string"
+    },
+    "called_at": "timestamp",
+    "engine": "string",
+    "filename": "string",
+    "hasSpeakerInfo": "boolean",
+    "isDummyMetaData": "boolean",
+    "isTest": "boolean",
+    "numSearchResults": "bigint",
+    "orig_filename": "string",
+    "rawEngineResult": {
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "start_index_word_array": {
+                                "type": "array",
+                                "element": "bigint"
+                            },
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "punctuated_word": "string",
+                                    "start": "double",
+                                    "word": "string"
+                                }
+                            }
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "redactionTimeSpanArray": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "stime": "double"
+        }
+    },
+    "res_id": "string",
+    "searchResult": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "sha256": "string",
+    "sha256_config": "string",
+    "sha256_redacted": "string",
+    "speakers": {
+        "agent": "bigint",
+        "borrower": "bigint"
+    },
+    "status": "string",
+    "tags": {
+        "type": "array",
+        "element": "string"
+    },
+    "transcription": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "offset": "bigint",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcriptionConfig": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "model": "string",
+        "speakerConfiguration": {
+            "agent": "bigint",
+            "borrower": "bigint"
+        },
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        },
+        "tier": "string",
+        "diarizationFunction": "string",
+        "isDiarizationRequired": "boolean",
+        "language": "string",
+        "numerals": "boolean",
+        "version": "string",
+        "nonenglishmodel": "string"
+    },
+    "transcriptionMetadata": {
+        "channels": "bigint",
+        "created": "string",
+        "duration": "double",
+        "model_info": {
+            "1d02e01c-f076-44af-a314-cb6904b76912": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "66d31423-0768-4ef7-bb79-c5961ce2e7ec": {
+                "arch": "string",
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            },
+            "8109a203-c6c9-413c-bb98-aaa40c9aac1c": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            }
+        },
+        "models": {
+            "type": "array",
+            "element": "string"
+        },
+        "request_id": "string",
+        "sha256": "string",
+        "timeForTranscription": "double",
+        "transaction_key": "string",
+        "duplicate": "boolean",
+        "duplicate_id": "string",
+        "processing_time": "double",
+        "status": "string",
+        "tags": {
+            "type": "array",
+            "element": "string"
+        }
+    },
+    "uploadTS": "timestamp",
+    "violation_status": "boolean",
+    "violations": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "__is_backfill": "boolean",
+    "autoArchived": "boolean",
+    "customFilename": "string",
+    "intentEngineResult": {
+        "accountExplorer": {
+            "I2540": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2550": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2560": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2570": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2580": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2590": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1000": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1010": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1020": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1030": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1040": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1050": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1060": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1070": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1080": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1090": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1100": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1110": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1120": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1130": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1140": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1150": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1160": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1170": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            }
+        }
+    },
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "audioFilePath": "string",
+    "audio_filepath": "string",
+    "connector_id": "string",
+    "date": "string",
+    "dialerMetadata": {
+        "AGENT__RESULT": "string",
+        "agent": "string",
+        "audioFilename": "string",
+        "duration": "string",
+        "recordingCallId": "string",
+        "termCode": "string",
+        "uniqueCallId": "string"
+    },
+    "download_basepath": "string",
+    "efsKey": "string",
+    "ignore_dedupe_checks": "boolean",
+    "isDirOutbound": "boolean",
+    "isDuplicate": "boolean",
+    "isFailed": "boolean",
+    "numberOfNotes": "bigint",
+    "preferredMetadata": {
+        "accountNumber": "string",
+        "agentDisposition": "string",
+        "agentId": "string",
+        "audioFilename": "string",
+        "balance": "string",
+        "callCenterName": "string",
+        "callDateTime": "string",
+        "callDirection": "bigint",
+        "campaign": "string",
+        "clientName": "string",
+        "consumerName": "string",
+        "phoneNumber": "string"
+    },
+    "published_ts": "string",
+    "record_id": "string",
+    "source_id": "string",
+    "source_s3_key": "string",
+    "tenant_id": "string",
+    "validation_status": {
+        "AGENTID": "string",
+        "DATETIME": "string",
+        "DIRECTION": "string",
+        "DURATION": "string",
+        "FILENAME": "string",
+        "RECORDINGCALLID": "string",
+        "RESULTCODE": "string",
+        "RESULTID": "string",
+        "UNIQUECALLID": "string"
+    },
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string"
+}

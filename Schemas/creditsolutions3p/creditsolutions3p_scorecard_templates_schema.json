@@ -1,0 +1,70 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "_id": "string",
+    "createdAt": "string",
+    "createdBy": "string",
+    "disable": "boolean",
+    "gradeOptions": {
+        "type": "array",
+        "element": {
+            "id": "string",
+            "max": "bigint",
+            "min": "bigint",
+            "name": "string"
+        }
+    },
+    "maxScore": "bigint",
+    "name": "string",
+    "pause": "boolean",
+    "scoringSystem": "string",
+    "sections": {
+        "type": "array",
+        "element": {
+            "maxScore": "bigint",
+            "name": "string",
+            "questions": {
+                "type": "array",
+                "element": {
+                    "isAutoFail": "boolean",
+                    "isMandatory": "boolean",
+                    "maxScore": "bigint",
+                    "name": "string",
+                    "qOptions": {
+                        "type": "array",
+                        "element": {
+                            "oScore": "bigint",
+                            "oText": "string",
+                            "oType": "string"
+                        }
+                    },
+                    "qText": "string",
+                    "qType": "string"
+                }
+            },
+            "sectionType": "string"
+        }
+    },
+    "templateType": "string",
+    "__is_backfill": "boolean",
+    "autoArchived": "boolean",
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string",
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    }
+}

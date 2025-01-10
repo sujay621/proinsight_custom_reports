@@ -1,0 +1,153 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "_id": "string",
+    "adjustedScore": "bigint",
+    "createdAt": "string",
+    "createdBy": "string",
+    "disable": "boolean",
+    "edited": {
+        "editHistory": {
+            "type": "array",
+            "element": {
+                "createdAt": "string",
+                "templateFilters": {
+                    "type": "array",
+                    "element": {
+                        "condition": "string",
+                        "field": "string",
+                        "value": {
+                            "type": "array",
+                            "element": "string"
+                        },
+                        "clauses": {
+                            "type": "array",
+                            "element": {
+                                "condition": "string",
+                                "value": {
+                                    "type": "array",
+                                    "element": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "username": "string"
+            }
+        },
+        "editedAt": "string",
+        "editedBy": "string"
+    },
+    "grade": "string",
+    "gradeOptions": {
+        "type": "array",
+        "element": {
+            "id": "string",
+            "max": "bigint",
+            "min": "bigint",
+            "name": "string"
+        }
+    },
+    "maxScore": "bigint",
+    "name": "string",
+    "pause": "boolean",
+    "score": "bigint",
+    "scoringSystem": "string",
+    "sections": {
+        "type": "array",
+        "element": {
+            "maxScore": "bigint",
+            "name": "string",
+            "questions": {
+                "type": "array",
+                "element": {
+                    "autoFillRules": {
+                        "type": "array",
+                        "element": {
+                            "response": "bigint",
+                            "rule": {
+                                "checkType": "string",
+                                "children": {
+                                    "type": "array",
+                                    "element": {
+                                        "checkType": "string",
+                                        "ruleType": "string",
+                                        "tags": {
+                                            "type": "array",
+                                            "element": "string"
+                                        }
+                                    }
+                                },
+                                "constant": "boolean",
+                                "op": "string",
+                                "ruleType": "string",
+                                "tags": {
+                                    "type": "array",
+                                    "element": "string"
+                                }
+                            }
+                        }
+                    },
+                    "isAutoFail": "boolean",
+                    "isMandatory": "boolean",
+                    "maxScore": "bigint",
+                    "name": "string",
+                    "qOptions": {
+                        "type": "array",
+                        "element": {
+                            "oScore": "bigint",
+                            "oText": "string",
+                            "oType": "string"
+                        }
+                    },
+                    "qText": "string",
+                    "qType": "string"
+                }
+            },
+            "score": "bigint",
+            "sectionType": "string"
+        }
+    },
+    "templateFilters": {
+        "type": "array",
+        "element": {
+            "clauses": {
+                "type": "array",
+                "element": {
+                    "condition": "string",
+                    "value": {
+                        "type": "array",
+                        "element": "string"
+                    }
+                }
+            },
+            "condition": "string",
+            "field": "string",
+            "value": {
+                "type": "array",
+                "element": "string"
+            }
+        }
+    },
+    "templateType": "string",
+    "__is_backfill": "boolean",
+    "autoArchived": "boolean",
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string"
+}
