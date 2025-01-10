@@ -2,14 +2,22 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import QueryForm from './components/QueryForm';
 import { Button, Container, Box } from '@mui/material';
+import { TenantProvider } from './context/TenantContext';
+import { useTenant } from './hooks/useTenant';
 
-function App() {
-  const [results, setResults] = useState([{ id: 1 }]); // Mock results for testing
+// Create a wrapper component to use the context
+const AppContent = () => {
+  const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
+  const { selectedTenant } = useTenant();
 
   const handleSendReports = () => {
+    if (!selectedTenant) {
+      console.error('No tenant selected');
+      return;
+    }
     // Logic to send reports
-    console.log('Reports sent!');
+    console.log('Sending reports for tenant:', selectedTenant);
   };
 
   return (
@@ -17,7 +25,7 @@ function App() {
       <Header />
       <QueryForm setResults={setResults} setError={setError} />
       <Container maxWidth="lg" sx={{ mt: 4 }}>
-        {!error && results && (
+        {!error && results && selectedTenant && (
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
             <Button
               variant="contained"
@@ -30,6 +38,15 @@ function App() {
         )}
       </Container>
     </div>
+  );
+};
+
+// Main App component wraps everything with the TenantProvider
+function App() {
+  return (
+    <TenantProvider>
+      <AppContent />
+    </TenantProvider>
   );
 }
 
