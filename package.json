@@ -1,0 +1,9 @@
+{
+  "name": "your-project-root",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd app-frontend && npm start",
+    "install-frontend": "cd app-frontend && npm install",
+    "start-frontend": "cd app-frontend && npm start"
+  }
+}
