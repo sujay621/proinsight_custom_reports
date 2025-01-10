@@ -1,0 +1,55 @@
+.tableHeaderStyle {
+    background-color: #f8f9fa;
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: bold;
+}
+
+.tableCellStyle {
+    padding: 12px 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flexContainer {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.inputSection, .metadataSection {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+}
+
+.loadingState {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.errorMessage {
+    color: red;
+    padding: 10px;
+    background-color: #fff3f3;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.resultsContainer {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+} 
