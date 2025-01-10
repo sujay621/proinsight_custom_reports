@@ -6,8 +6,18 @@ from .config.Databricks_connection import (
     DATABRICKS_ACCESS_TOKEN,
     HTTP_PATH,
 )
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # React app's address
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Input model for the query
@@ -16,10 +26,13 @@ class QueryRequest(BaseModel):
 
 
 @app.post("/execute-query")
-async def execute_query(query_request: QueryRequest):
+async def execute_query(request: QueryRequest):
+    if not request.query or not request.query.strip():
+        raise HTTPException(status_code=400, detail="Query cannot be empty")
+
     try:
         # Clean the query by removing extra whitespace
-        query = " ".join(query_request.query.split())
+        query = " ".join(request.query.split())
 
         # Connect to Databricks and execute the query
         with sql.connect(
