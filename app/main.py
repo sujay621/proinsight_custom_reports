@@ -75,3 +75,25 @@ async def test_connection():
                 }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Connection failed: {str(e)}")
+
+
+# Add this class for tenant response
+class TenantResponse(BaseModel):
+    tenant: str | None = None
+
+
+# Global variable to store current tenant
+current_tenant = {"name": None}
+
+
+@app.get("/current-tenant", response_model=TenantResponse)
+async def get_current_tenant():
+    """Get the currently selected tenant."""
+    return {"tenant": current_tenant["name"]}
+
+
+@app.post("/current-tenant")
+async def set_current_tenant(tenant: str):
+    """Update the currently selected tenant."""
+    current_tenant["name"] = tenant
+    return {"message": f"Current tenant set to: {tenant}"}

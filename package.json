@@ -1,5 +1,5 @@
 {
-  "name": "your-project-root",
+  "name": "proinsight_custom_reports",
   "version": "1.0.0",
   "scripts": {
     "start": "cd app-frontend && npm start",
