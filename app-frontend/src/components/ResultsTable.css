@@ -1,0 +1,40 @@
+.results-table-container {
+    margin-top: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tableHeaderStyle {
+    background-color: #f1f1f1;
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: bold;
+}
+
+.tableCellStyle {
+    padding: 12px 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.even-row {
+    background-color: #ffffff;
+}
+
+.odd-row {
+    background-color: #f2f2f2;
+} 
