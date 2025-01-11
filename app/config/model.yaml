@@ -1,0 +1,5 @@
+prompt_id: "P0"
+
+llmmodel: 
+  modelby: "anthropic"  ### "anthropic": "claude-3-5-sonnet-20241022"  ### "gemini": "gemini-2.0-flash-exp"   ### "openai": "gpt-4o"  ###"openai": "gpt-4o-mini"
+  modelname: "claude-3-5-sonnet-20241022"

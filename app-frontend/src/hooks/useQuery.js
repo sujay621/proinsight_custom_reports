@@ -5,18 +5,30 @@ export const useQuery = () => {
     const [results, setResults] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [generatedSQL, setGeneratedSQL] = useState(null);
 
-    const executeQuery = async (query) => {
+    const executeQuery = async (prompt, tenant) => {
         setLoading(true);
         setError(null);
-
+        
         try {
-            const response = await axios.post('http://localhost:8000/execute-query', {
-                query: query.trim()
+            // First, get the SQL query from the LLM
+            const queryResponse = await axios.post('http://localhost:8000/fetch-query', {
+                query: prompt,
+                tenant: tenant
             });
 
-            if (response.data.results) {
-                setResults(response.data.results);
+            const sqlQuery = queryResponse.data.generated_sql;
+            setGeneratedSQL(sqlQuery);
+
+            // Then execute the generated query
+            const resultsResponse = await axios.post('http://localhost:8000/execute-query', {
+                query: sqlQuery,
+                tenant: tenant
+            });
+
+            if (resultsResponse.data.results) {
+                setResults(resultsResponse.data.results);
             } else {
                 setError('No results returned');
             }
@@ -28,5 +40,5 @@ export const useQuery = () => {
         }
     };
 
-    return { results, error, loading, executeQuery };
+    return { results, error, loading, generatedSQL, executeQuery };
 }; 
