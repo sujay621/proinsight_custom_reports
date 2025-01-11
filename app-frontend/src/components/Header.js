@@ -1,21 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { useTenant } from '../hooks/useTenant';
-
-const tenantList = ['alliancerevcycle', 'annuity', 'bca', 'blittandgaines', 'cascade', 
-    'cavalry', 'ccmr3', 'creditmanagementcompany', 'creditsolutions3p', 'creditsolutionseo', 
-    'crownassetmgmt', 'curofinancial', 'dc1', 'dccpc', 'dcfirstcredit', 'dcrgs', 'dcsyncom', 
-    'dfc_use2_000', 'diversefundingassoc', 'ele_use2_000', 'everest', 'ffam', 'firstcreditservices', 
-    'firsthelpfinancial', 'gatestonecpe', 'gatestonesci', 'gatestoneus', 'gatestoneusaa', 'grc', 
-    'halsted', 'harrisandharris', 'hcm', 'holliscobb', 'icaglaw', 'icajuba', 'icamfiman', 'icbh', 
-    'icbw', 'icca2', 'iccaf', 'icdatamax', 'icfcr', 'icffr', 'icgbs', 'iclcs', 'icljross', 'icmlc', 
-    'icpr', 'icprocom', 'icsparklight', 'icsra', 'icsyncom', 'icucb', 'icucbeo', 'icucbmed', 
-    'invcustomerservice', 'investinet', 'invinvestigations', 'koalafi', 'kohnlawfirm', 'mars', 
-    'mcy_use2_000', 'mendelsonlawfirm', 'moorelaw', 'nes', 'nra', 'optio', 'pendrick', 'philipscohen', 
-    'prosper', 'psb', 'rashcurtis', 'resurgent', 'revenuecycle', 'rfs', 'secservices', 'sequium', 
-    'sherloq', 'sho', 'sna_use2_000', 'springoak', 'stenger', 'stillmanlaw', 'timepayment', 
-    'trk_use2_000', 'trueaccord', 'tsi_use2_000', 'unifin', 'universalcredit', 'universalfidelity', 
-    'zarzaurandschwartz', 'zwicker'];
+import { TENANT_LIST } from '../constants/tenants';
 
 function Header() {
     const { selectedTenant, selectTenant } = useTenant();
@@ -40,7 +26,7 @@ function Header() {
                         <MenuItem value="">
                             <em>Select tenant</em>
                         </MenuItem>
-                        {tenantList.map((tenant) => (
+                        {TENANT_LIST.map((tenant) => (
                             <MenuItem key={tenant} value={tenant}>
                                 {tenant}
                             </MenuItem>

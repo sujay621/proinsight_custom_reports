@@ -5,12 +5,15 @@ import MetadataTable from './MetadataTable';
 import ResultsTable from './ResultsTable';
 import InputSection from './InputSection';
 import { LoadingState, ErrorMessage } from './LoadingState';
-import { Container, Grid, Paper, Typography, Box } from '@mui/material';
+import { Container, Paper, Typography, Box, Button } from '@mui/material';
+import EmailDialog from './EmailDialog';
 
 function QueryForm({ setResults, setError }) {
     const [prompt, setPrompt] = useState('');
     const { results, error, loading, generatedSQL, executeQuery } = useQuery();
     const { selectedTenant } = useTenant();
+    const [openSendDialog, setOpenSendDialog] = useState(false);
+    const [openScheduleDialog, setOpenScheduleDialog] = useState(false);
 
     const metadataInfo = [
         { column: "agent_id", type: "string", description: "Unique identifier for each agent" },
@@ -44,8 +47,12 @@ function QueryForm({ setResults, setError }) {
                     </Typography>
                 )}
             </Box>
-            <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+            <Box sx={{ 
+                display: 'flex', 
+                gap: 3,
+                flexDirection: { xs: 'column', md: 'row' } 
+            }}>
+                <Box sx={{ flex: 1 }}>
                     <Paper sx={{ p: 2 }}>
                         <InputSection 
                             prompt={prompt} 
@@ -55,9 +62,9 @@ function QueryForm({ setResults, setError }) {
                             disabled={!selectedTenant}
                         />
                     </Paper>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Paper sx={{ p: 2 }}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
+                    <Paper sx={{ p: 2, opacity: selectedTenant ? 1 : 0.5 }}>
                         {generatedSQL && (
                             <Box sx={{ mb: 3 }}>
                                 <Typography variant="h6" gutterBottom>
@@ -74,12 +81,12 @@ function QueryForm({ setResults, setError }) {
                             </Box>
                         )}
                         <Typography variant="h6" gutterBottom>
-                            Available Metadata
+                            List Metadata
                         </Typography>
                         <MetadataTable metadataInfo={metadataInfo} />
                     </Paper>
-                </Grid>
-            </Grid>
+                </Box>
+            </Box>
 
             {loading && <LoadingState />}
             {error && <ErrorMessage error={error} />}
@@ -88,6 +95,36 @@ function QueryForm({ setResults, setError }) {
                     <ResultsTable results={results} />
                 </Paper>
             )}
+
+            {results && (
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2, gap: 2 }}>
+                    <Button 
+                        variant="outlined" 
+                        color="primary"
+                        onClick={() => setOpenSendDialog(true)}
+                    >
+                        Send Reports
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="secondary"
+                        onClick={() => setOpenScheduleDialog(true)}
+                    >
+                        Approve & Schedule
+                    </Button>
+                </Box>
+            )}
+
+            <EmailDialog
+                open={openSendDialog}
+                handleClose={() => setOpenSendDialog(false)}
+                isScheduled={false}
+            />
+            <EmailDialog
+                open={openScheduleDialog}
+                handleClose={() => setOpenScheduleDialog(false)}
+                isScheduled={true}
+            />
         </Container>
     );
 }

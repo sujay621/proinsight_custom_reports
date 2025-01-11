@@ -9,9 +9,10 @@ from Databricks_connection import (
 from llm_helpers import LLMHelper
 from fastapi.middleware.cors import CORSMiddleware
 from utils.utils import get_llm_prompt
-from typing import Dict, Any
+from typing import Dict, Any, List
 import yaml
 from pathlib import Path
+from .config.mongodb_connection import get_db
 
 app = FastAPI()
 
@@ -97,7 +98,7 @@ current_tenant = {"name": None}
 async def fetch_query(request: QueryRequest):
     if not request.query or not request.query.strip():
         raise HTTPException(status_code=400, detail="Prompt cannot be empty")
-    
+
     # Get current tenant context
     if not request.tenant:
         raise HTTPException(status_code=400, detail="Tenant must be specified")
@@ -108,17 +109,15 @@ async def fetch_query(request: QueryRequest):
         config_path = Path("config/model.yaml")
         if not config_path.exists():
             raise HTTPException(
-                status_code=500, 
-                detail="Model configuration file not found"
+                status_code=500, detail="Model configuration file not found"
             )
-        
+
         try:
             with open(config_path, "r") as f:
                 prompt_config = yaml.safe_load(f)
         except yaml.YAMLError as e:
             raise HTTPException(
-                status_code=500,
-                detail=f"Error parsing model configuration: {str(e)}"
+                status_code=500, detail=f"Error parsing model configuration: {str(e)}"
             )
 
         # Generate LLM prompt and SQL query
@@ -126,8 +125,7 @@ async def fetch_query(request: QueryRequest):
             llm_prompt = get_llm_prompt(request.query, request.tenant)
         except (FileNotFoundError, ValueError) as e:
             raise HTTPException(
-                status_code=400,
-                detail=f"Error generating prompt: {str(e)}"
+                status_code=400, detail=f"Error generating prompt: {str(e)}"
             )
 
         try:
@@ -135,20 +133,18 @@ async def fetch_query(request: QueryRequest):
             sql_query = llm_helper.get_sql_query(prompt_config, llm_prompt)
         except Exception as e:
             raise HTTPException(
-                status_code=500,
-                detail=f"Error generating SQL query with LLM: {str(e)}"
+                status_code=500, detail=f"Error generating SQL query with LLM: {str(e)}"
             )
-        
+
         return {
             "original_prompt": request.query,
             "generated_sql": sql_query,
-            "tenant": request.tenant
+            "tenant": request.tenant,
         }
-        
+
     except Exception as e:
         raise HTTPException(
-            status_code=500, 
-            detail=f"Error generating SQL query: {str(e)}"
+            status_code=500, detail=f"Error generating SQL query: {str(e)}"
         )
 
 
@@ -163,3 +159,99 @@ async def set_current_tenant(tenant: str):
     """Update the currently selected tenant."""
     current_tenant["name"] = tenant
     return {"message": f"Current tenant set to: {tenant}"}
+
+
+@app.get("/scorecards/{tenant_id}")
+async def get_scorecards(tenant_id: str):
+    """Get scorecards for a specific tenant."""
+    try:
+        db = get_db(tenant_id)
+        if not db:
+            raise HTTPException(status_code=500, detail="Could not connect to database")
+
+        # Get all scorecard names from MongoDB
+        scorecards = []
+        for scorecard in db.scorecard_templates.find({}, {"name": 1}):
+            if scorecard.get("name"):
+                scorecards.append(scorecard["name"])
+
+        return {"scorecards": scorecards}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error fetching scorecards: {str(e)}"
+        )
+
+
+@app.get("/scorecard/{tenant_id}/{scorecard_name}")
+async def get_scorecard_details(tenant_id: str, scorecard_name: str):
+    """Get specific scorecard details."""
+    try:
+        db = get_db(tenant_id)
+        if not db:
+            raise HTTPException(status_code=500, detail="Could not connect to database")
+
+        scorecard = db.scorecard_templates.find_one({"name": scorecard_name})
+        if not scorecard:
+            raise HTTPException(
+                status_code=404, detail=f"Scorecard {scorecard_name} not found"
+            )
+
+        return {
+            "id": str(scorecard["_id"]),
+            "name": scorecard["name"],
+            "details": scorecard,
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error fetching scorecard details: {str(e)}"
+        )
+
+
+class QuickReportRequest(BaseModel):
+    report_type: str
+    frequency: str
+    tenant: str
+    scorecard_name: str | None = None
+    selected_tags: List[str] | None = None
+
+
+@app.post("/quick-report")
+async def generate_quick_report(request: QuickReportRequest):
+    """Generate report based on selected options"""
+    try:
+        print(f"Generating {request.report_type} report")
+        print(f"Frequency: {request.frequency}")
+        print(f"Tenant: {request.tenant}")
+
+        if request.report_type == "Scorecard review report":
+            print(f"Selected scorecard: {request.scorecard_name}")
+            # Add scorecard report logic here
+            return {
+                "message": "Scorecard report generated",
+                "details": {
+                    "type": request.report_type,
+                    "frequency": request.frequency,
+                    "scorecard": request.scorecard_name,
+                },
+            }
+
+        elif request.report_type == "Tag based report":
+            print(f"Selected tags: {request.selected_tags}")
+            # Add tag report logic here
+            return {
+                "message": "Tag report generated",
+                "details": {
+                    "type": request.report_type,
+                    "frequency": request.frequency,
+                    "tags": request.selected_tags,
+                },
+            }
+
+        return {"message": "Unknown report type"}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error generating report: {str(e)}"
+        )
