@@ -5,3 +5,5 @@ pydantic_core==2.27.2
 uvicorn==0.27.1
 python-dotenv==1.0.0
 fastapi-cors==0.0.6 
+python-multipart==0.0.6
+anthropic==0.10.1

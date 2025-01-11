@@ -2,6 +2,7 @@ import json
 import os
 from pathlib import Path
 import yaml
+from config.mongodb_connection import get_db
 
 
 def read_yaml_config(file_path: str) -> dict:
@@ -19,10 +20,18 @@ def read_yaml_config(file_path: str) -> dict:
     except yaml.YAMLError as e:
         raise ValueError(f"Error parsing YAML configuration: {str(e)}")
 
+def get_tag_list(tenant):
+    db = get_db(tenant)
+    tags = db['tags'].find()
+    tag_list = [tag["_id"] for tag in tags]
+    return tag_list
+
 def get_llm_prompt(user_prompt, tenant):
     # Get the absolute path to the app directory
     app_dir = Path(__file__).parent.parent
     schema_path = app_dir / "Schemas" / tenant
+    tag_list = get_tag_list(tenant)
+    print(tag_list)
 
     try:
         # Define schema file paths
@@ -67,16 +76,18 @@ def get_llm_prompt(user_prompt, tenant):
         3. If you ever require to join {call_data_table} and {scorecard_responses_table} then you can join using '_id' field of {call_data_table} and 'callID' field of {scorecard_responses_table}.
         4. If you ever require to join {scorecard_responses_table} and {scorecard_templates_table} then you can join using 'scorecardTemplateId' field of {scorecard_responses_table} and  '_id' of {scorecard_templates_table}.
         5. If someone refers to a tag, you can query ‘tags’ field in the {call_data_table}.
-        6. Many times user doesn’t know exact tag _id. So first you need a best guess to find the ‘_id’ from the {tags_table} for the rough tag names provided by the user. Then you can use these _id to query the tables. For example if user mentions ‘wrong party’ tag, the exact tag ‘_id’ should be ‘generic/Wrong Party’.
+        6. Many times user doesn’t know exact tag _id. So first you need a best guess to find the ‘_id’ from the list of tags {tag_list} for the tag names provided by the user. Then you can use these _id to query the tables. For example if user mentions ‘wrong party’ tag, then exact tag ‘_id’ should be ‘generic/Wrong Party’. Example2: ‘do not call’ tag, then exact tag ‘_id’ should be ‘generic/Do Not Call’. In case if you are able to find more than one tag then put or condition array_contains for all the relevant tags.
         7. When user mentions anything about a scorecard it means they are referring to scorecard responses. Scorecard templates is just a template of questions(it should just be used to fetch the questions). And scorecard responses are the answers to those questions.
-        
+        8. If there is a question about the sentiment then always use ‘scores’ field in the {call_data_table} to find the sentiment score.
+
+
         **Tables and Schemas**:
         {call_data_table}: {call_data_schema},
         {scorecard_responses_table}: {scorecard_responses_schema},
         {scorecard_templates_table}: {scorecard_templates_schema},
         {tags_table}: {tags_schema}
 
-        **Output**:  Just give the query, I don’t need any other information. Always re-ensure that the query is correct by validating the field from the schema and will return the data as per the user query.
+        **Output**: Just give the query, I don’t need any other information. Always re-ensure that the query is correct by validating the field from the schema and will return the data as per the user query. Also, ensure that the syntax is correct.
         """
 
     except FileNotFoundError as e:

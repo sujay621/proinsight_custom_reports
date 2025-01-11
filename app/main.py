@@ -12,6 +12,15 @@ from utils.utils import get_llm_prompt
 from typing import Dict, Any
 import yaml
 from pathlib import Path
+from utils.PTEmailHandler import SendEmail
+from fastapi import UploadFile, File, Form
+import json
+import pandas as pd
+from io import StringIO
+import os
+from datetime import datetime
+import base64
+from typing import List
 
 app = FastAPI()
 
@@ -151,7 +160,6 @@ async def fetch_query(request: QueryRequest):
             detail=f"Error generating SQL query: {str(e)}"
         )
 
-
 @app.get("/current-tenant", response_model=TenantResponse)
 async def get_current_tenant():
     """Get the currently selected tenant."""
@@ -163,3 +171,111 @@ async def set_current_tenant(tenant: str):
     """Update the currently selected tenant."""
     current_tenant["name"] = tenant
     return {"message": f"Current tenant set to: {tenant}"}
+
+class SendEmailRequest(BaseModel):
+    emails: List[str]
+    results: dict
+
+@app.post("/send-report")
+async def send_report(
+    file: UploadFile = File(...),
+    emails: str = Form(...),
+):
+    try:
+        # Parse the emails JSON string back to a list
+        email_list = json.loads(emails)
+        
+        # Read the CSV file content
+        contents = await file.read()
+        csv_string = contents.decode()
+        
+        # Convert CSV string to pandas DataFrame
+        df = pd.read_csv(StringIO(csv_string))
+
+        # Save the file temporarily
+        reports_folder = "reports"
+        if not os.path.exists(reports_folder):
+            os.makedirs(reports_folder)
+
+        filename = f"smart_report_{datetime.now().strftime('%Y%m%d%H%M%S')}.csv"
+        filepath = os.path.join(reports_folder, filename)
+        df.to_csv(filepath, index=False)
+
+        # Read the file and encode it for email attachment
+        with open(filepath, "rb") as f:
+            file_content_base64 = base64.b64encode(f.read()).decode("utf-8")
+
+        # Prepare email attachment
+        email_attachments = [
+            {
+                "type": "base64_encoded",
+                "filename": filename,
+                "filepath": filepath
+            }
+        ]
+
+        # Send email using PTEmailHandler
+        email_response = SendEmail(
+            EmailTos=email_list,
+            EmailSubject="ProInsight Custom Report",
+            EmailBodyContent="Dear Customer,\n\nPlease find attached the report from ProInsight.\n\nThanks\nTeam Prodigal",
+            EmailAttachments=email_attachments,
+        )
+
+        # Clean up the temporary file
+        if os.path.exists(filepath):
+            os.remove(filepath)
+
+        if email_response["status"] == "success":
+            return {
+                "message": "Report sent successfully",
+                "recipients": email_list,
+                "filename": filename,
+                "email_response": email_response
+            }
+        else:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error sending email: {email_response.get('error', 'Unknown error')}"
+            )
+        
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Invalid email list format")
+    except Exception as e:
+        # Clean up the temporary file in case of error
+        if 'filepath' in locals() and os.path.exists(filepath):
+            os.remove(filepath)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error sending report: {str(e)}"
+        )
+
+class ScheduleRequest(BaseModel):
+    tenant: str
+    email: list[str]
+    time: str
+    frequency: str
+
+@app.post("/schedule-report")
+async def schedule_report(request: ScheduleRequest):
+    try:
+        # Here you would typically:
+        # 1. Validate the schedule request
+        # 2. Store the schedule in your database
+        # 3. Set up the actual scheduling mechanism (e.g., using celery, airflow, etc.)
+        
+        # For now, we'll just return a success response
+        return {
+            "message": "Report scheduled successfully",
+            "schedule": {
+                "tenant": request.tenant,
+                "email": request.email,
+                "time": request.time,
+                "frequency": request.frequency
+            }
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error scheduling report: {str(e)}"
+        )

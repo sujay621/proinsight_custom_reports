@@ -13,7 +13,7 @@ function QueryForm({ setResults, setError }) {
     const { selectedTenant } = useTenant();
 
     const metadataInfo = [
-        { column: "agent_id", type: "string", description: "Unique identifier for each agent" },
+        { Fields: "agent_id", type: "string", description: "Unique identifier for each agent" },
     ];
 
     const handleSubmit = async (e) => {
