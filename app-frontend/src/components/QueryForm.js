@@ -5,7 +5,7 @@ import MetadataTable from './MetadataTable';
 import ResultsTable from './ResultsTable';
 import InputSection from './InputSection';
 import { LoadingState, ErrorMessage } from './LoadingState';
-import { Container, Grid, Paper, Typography, Box } from '@mui/material';
+import { Container, Paper, Typography, Box } from '@mui/material';
 
 function QueryForm({ setResults, setError }) {
     const [prompt, setPrompt] = useState('');
@@ -50,8 +50,12 @@ function QueryForm({ setResults, setError }) {
                     </Typography>
                 )}
             </Box>
-            <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+            <Box sx={{ 
+                display: 'flex', 
+                gap: 3,
+                flexDirection: { xs: 'column', md: 'row' } 
+            }}>
+                <Box sx={{ flex: 1 }}>
                     <Paper sx={{ p: 2 }}>
                         <InputSection 
                             prompt={prompt} 
@@ -61,16 +65,16 @@ function QueryForm({ setResults, setError }) {
                             disabled={!isValidTenant}
                         />
                     </Paper>
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                     <Paper sx={{ p: 2, opacity: isValidTenant ? 1 : 0.5 }}>
                         <Typography variant="h6" gutterBottom>
                             List Metadata
                         </Typography>
                         <MetadataTable metadataInfo={metadataInfo} />
                     </Paper>
-                </Grid>
-            </Grid>
+                </Box>
+            </Box>
 
             {loading && <LoadingState />}
             {error && <ErrorMessage error={error} />}

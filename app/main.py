@@ -7,6 +7,8 @@ from .config.Databricks_connection import (
     HTTP_PATH,
 )
 from fastapi.middleware.cors import CORSMiddleware
+from .config.mongodb_connection import get_db
+from typing import List
 
 app = FastAPI()
 
@@ -97,3 +99,99 @@ async def set_current_tenant(tenant: str):
     """Update the currently selected tenant."""
     current_tenant["name"] = tenant
     return {"message": f"Current tenant set to: {tenant}"}
+
+
+@app.get("/scorecards/{tenant_id}")
+async def get_scorecards(tenant_id: str):
+    """Get scorecards for a specific tenant."""
+    try:
+        db = get_db(tenant_id)
+        if not db:
+            raise HTTPException(status_code=500, detail="Could not connect to database")
+
+        # Get all scorecard names from MongoDB
+        scorecards = []
+        for scorecard in db.scorecard_templates.find({}, {"name": 1}):
+            if scorecard.get("name"):
+                scorecards.append(scorecard["name"])
+
+        return {"scorecards": scorecards}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error fetching scorecards: {str(e)}"
+        )
+
+
+@app.get("/scorecard/{tenant_id}/{scorecard_name}")
+async def get_scorecard_details(tenant_id: str, scorecard_name: str):
+    """Get specific scorecard details."""
+    try:
+        db = get_db(tenant_id)
+        if not db:
+            raise HTTPException(status_code=500, detail="Could not connect to database")
+
+        scorecard = db.scorecard_templates.find_one({"name": scorecard_name})
+        if not scorecard:
+            raise HTTPException(
+                status_code=404, detail=f"Scorecard {scorecard_name} not found"
+            )
+
+        return {
+            "id": str(scorecard["_id"]),
+            "name": scorecard["name"],
+            "details": scorecard,
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error fetching scorecard details: {str(e)}"
+        )
+
+
+class QuickReportRequest(BaseModel):
+    report_type: str
+    frequency: str
+    tenant: str
+    scorecard_name: str | None = None
+    selected_tags: List[str] | None = None
+
+
+@app.post("/quick-report")
+async def generate_quick_report(request: QuickReportRequest):
+    """Generate report based on selected options"""
+    try:
+        print(f"Generating {request.report_type} report")
+        print(f"Frequency: {request.frequency}")
+        print(f"Tenant: {request.tenant}")
+
+        if request.report_type == "Scorecard review report":
+            print(f"Selected scorecard: {request.scorecard_name}")
+            # Add scorecard report logic here
+            return {
+                "message": "Scorecard report generated",
+                "details": {
+                    "type": request.report_type,
+                    "frequency": request.frequency,
+                    "scorecard": request.scorecard_name,
+                },
+            }
+
+        elif request.report_type == "Tag based report":
+            print(f"Selected tags: {request.selected_tags}")
+            # Add tag report logic here
+            return {
+                "message": "Tag report generated",
+                "details": {
+                    "type": request.report_type,
+                    "frequency": request.frequency,
+                    "tags": request.selected_tags,
+                },
+            }
+
+        return {"message": "Unknown report type"}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error generating report: {str(e)}"
+        )

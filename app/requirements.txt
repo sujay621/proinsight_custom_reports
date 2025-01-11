@@ -4,4 +4,6 @@ pydantic==2.10.5
 pydantic_core==2.27.2
 uvicorn==0.27.1
 python-dotenv==1.0.0
-fastapi-cors==0.0.6 
+fastapi-cors==0.0.6
+boto3==1.34.34
+pymongo==4.6.1 
