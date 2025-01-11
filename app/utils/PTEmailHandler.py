@@ -247,9 +247,9 @@ def query_databricks_and_email(query, email_recipients, email_subject, server_ho
 
 
 
-server_hostname = "dbc-1fdd11ac-690f.cloud.databricks.com"  # Replace with your server hostname
-http_path = "/sql/1.0/warehouses/04ce2790c67cf614"  # Replace with your HTTP path
-access_token = "dapic56b5a2ceaf4b91b2bf51a3943b4d799"
+server_hostname = os.getenv("DATABRICKS_SERVER_HOSTNAME")  # Replace with your server hostname
+http_path = os.getenv("HTTP_PATH")  # Replace with your HTTP path
+access_token = os.getenv("DATABRICKS_ACCESS_TOKEN")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Query Databricks and email results.")
