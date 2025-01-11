@@ -5,12 +5,15 @@ import MetadataTable from './MetadataTable';
 import ResultsTable from './ResultsTable';
 import InputSection from './InputSection';
 import { LoadingState, ErrorMessage } from './LoadingState';
-import { Container, Paper, Typography, Box } from '@mui/material';
+import { Container, Paper, Typography, Box, Button } from '@mui/material';
+import EmailDialog from './EmailDialog';
 
 function QueryForm({ setResults, setError }) {
     const [prompt, setPrompt] = useState('');
     const { results, error, loading, executeQuery } = useQuery();
     const { selectedTenant } = useTenant();
+    const [openSendDialog, setOpenSendDialog] = useState(false);
+    const [openScheduleDialog, setOpenScheduleDialog] = useState(false);
 
     const metadataInfo = [
         { column: "agent_id", type: "string", description: "Unique identifier for each agent" },
@@ -83,6 +86,36 @@ function QueryForm({ setResults, setError }) {
                     <ResultsTable results={results} />
                 </Paper>
             )}
+
+            {results && (
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2, gap: 2 }}>
+                    <Button 
+                        variant="outlined" 
+                        color="primary"
+                        onClick={() => setOpenSendDialog(true)}
+                    >
+                        Send Reports
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="secondary"
+                        onClick={() => setOpenScheduleDialog(true)}
+                    >
+                        Approve & Schedule
+                    </Button>
+                </Box>
+            )}
+
+            <EmailDialog
+                open={openSendDialog}
+                handleClose={() => setOpenSendDialog(false)}
+                isScheduled={false}
+            />
+            <EmailDialog
+                open={openScheduleDialog}
+                handleClose={() => setOpenScheduleDialog(false)}
+                isScheduled={true}
+            />
         </Container>
     );
 }

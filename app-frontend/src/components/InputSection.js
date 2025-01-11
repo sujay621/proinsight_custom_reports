@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
     TextField, Button, Box, Typography, Select, MenuItem, 
     FormControl, InputLabel, Chip, OutlinedInput, Checkbox,
-    ListItemText 
+    ListItemText, Stack
 } from '@mui/material';
 import { QUICK_REPORTS, FREQUENCY_OPTIONS, AVAILABLE_TAGS } from '../constants/parameters';
 import { useTenant } from '../hooks/useTenant';
@@ -160,7 +160,7 @@ const InputSection = ({ prompt, setPrompt, handleSubmit, loading, disabled }) =>
                             onChange={handleTagChange}
                             input={<OutlinedInput label="Select Tags" />}
                             displayEmpty
-                            renderValue={() => "Selected Tags"}
+                            renderValue={() => ""}
                             sx={{ 
                                 height: '56px',
                                 '.MuiSelect-select': { 
@@ -224,21 +224,23 @@ const InputSection = ({ prompt, setPrompt, handleSubmit, loading, disabled }) =>
                 </>
             )}
 
-            <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                disabled={loading || disabled || (
-                    selectedReport === 'Scorecard review report' && (!frequency || !selectedScorecard)
-                ) || (
-                    selectedReport === 'Tag based report' && (!frequency || selectedTags.length === 0)
-                ) || (
-                    selectedReport === 'Smart Report' && !prompt.trim()
-                )}
-                sx={{ width: '100%' }}
-            >
-                {loading ? 'Loading...' : 'Submit'}
-            </Button>
+            <Stack direction="row" spacing={2} sx={{ width: '100%' }}>
+                <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    disabled={loading || disabled || (
+                        selectedReport === 'Scorecard review report' && (!frequency || !selectedScorecard)
+                    ) || (
+                        selectedReport === 'Tag based report' && (!frequency || selectedTags.length === 0)
+                    ) || (
+                        selectedReport === 'Smart Report' && !prompt.trim()
+                    )}
+                    sx={{ flex: 1 }}
+                >
+                    {loading ? 'Loading...' : 'Submit'}
+                </Button>
+            </Stack>
         </Box>
     );
 };

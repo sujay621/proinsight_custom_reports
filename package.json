@@ -5,5 +5,9 @@
     "start": "cd app-frontend && npm start",
     "install-frontend": "cd app-frontend && npm install",
     "start-frontend": "cd app-frontend && npm start"
+  },
+  "dependencies": {
+    "@mui/x-date-pickers": "^6.19.0",
+    "date-fns": "^2.30.0"
   }
 }
