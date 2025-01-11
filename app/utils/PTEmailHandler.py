@@ -200,7 +200,11 @@ def SendEmail(
 def query_databricks_and_email(query, email_recipients, email_subject, server_hostname, http_path, access_token, reports_folder="reports", filename_prefix="smart_report"):
     """Queries Databricks, saves to CSV, and emails the report."""
     try:
-        with databricks.sql.connect(server_hostname=server_hostname, http_path=http_path, access_token=access_token) as connection: # Use a with statement for context management
+        with databricks.sql.connect(
+            server_hostname=server_hostname,
+            http_path=http_path,
+            access_token=access_token
+        ) as connection: # Use a with statement for context management
             with connection.cursor() as cursor:
                 cursor.execute(query)
 
