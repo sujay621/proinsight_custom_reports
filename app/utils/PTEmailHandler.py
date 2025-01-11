@@ -5,11 +5,14 @@ from datetime import datetime
 import boto3
 import json
 import base64
-import argparse  
+import argparse
 
 
-AWS_LAMBDA_CLIENT = boto3.client("lambda", region_name="us-east-2")  # Replace with your region
-LAMBDA_FUNCTION_NAME = "OhLambdaEmailHandler" # Replace with your Lambda function name
+AWS_LAMBDA_CLIENT = boto3.client(
+    "lambda", region_name="us-east-2"
+)  # Replace with your region
+LAMBDA_FUNCTION_NAME = "OhLambdaEmailHandler"  # Replace with your Lambda function name
+
 
 def SendEmail(
     *,
@@ -21,7 +24,7 @@ def SendEmail(
     EmailBodyType="plain",
     EmailAttachments=[],
     EmailReplyTo="mailer-reply@prodigaltech.com",
-    MetaDataDict={}
+    MetaDataDict={},
 ):
     """
     Sends Email from a centralized Prodigaltech system.
@@ -196,15 +199,23 @@ def SendEmail(
     return {"status": "success", **lambdaRespPayload}
 
 
-
-def query_databricks_and_email(query, email_recipients, email_subject, server_hostname, http_path, access_token, reports_folder="reports", filename_prefix="smart_report"):
+def query_databricks_and_email(
+    query,
+    email_recipients,
+    email_subject,
+    server_hostname,
+    http_path,
+    access_token,
+    reports_folder="reports",
+    filename_prefix="smart_report",
+):
     """Queries Databricks, saves to CSV, and emails the report."""
     try:
         with databricks.sql.connect(
             server_hostname=server_hostname,
             http_path=http_path,
-            access_token=access_token
-        ) as connection: # Use a with statement for context management
+            access_token=access_token,
+        ) as connection:  # Use a with statement for context management
             with connection.cursor() as cursor:
                 cursor.execute(query)
 
@@ -225,23 +236,30 @@ def query_databricks_and_email(query, email_recipients, email_subject, server_ho
         df.to_csv(filepath, index=False)
         print(f"CSV report saved to: {filepath}")
 
-
         with open(filepath, "rb") as f:
             file_content_base64 = base64.b64encode(f.read()).decode("utf-8")
 
         email_attachments = [
-            {"type": "base64_encoded", "filename": filename, "body": file_content_base64}
+            {
+                "type": "base64_encoded",
+                "filename": filename,
+                "body": file_content_base64,
+            }
         ]
 
         email_response = SendEmail(
-            EmailTos=email_recipients, EmailSubject=email_subject, EmailBodyContent="Dear Customer,\n\nPlease find the attached the report from ProInsight.\n\nThanks\nTeam Prodigal", EmailAttachments=email_attachments,
+            EmailTos=email_recipients,
+            EmailSubject=email_subject,
+            EmailBodyContent="Dear Customer,\n\nPlease find the attached the report from ProInsight.\n\nThanks\nTeam Prodigal",
+            EmailAttachments=email_attachments,
         )
 
         if email_response["status"] == "success":
             print("Email sent successfully!")
         else:
-            print(f"Error sending email: {email_response.get('error', 'Unknown error')}")
-
+            print(
+                f"Error sending email: {email_response.get('error', 'Unknown error')}"
+            )
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -250,8 +268,9 @@ def query_databricks_and_email(query, email_recipients, email_subject, server_ho
             connection.close()
 
 
-
-server_hostname = os.getenv("DATABRICKS_SERVER_HOSTNAME")  # Replace with your server hostname
+server_hostname = os.getenv(
+    "DATABRICKS_SERVER_HOSTNAME"
+)  # Replace with your server hostname
 http_path = os.getenv("HTTP_PATH")  # Replace with your HTTP path
 access_token = os.getenv("DATABRICKS_ACCESS_TOKEN")
 
@@ -259,26 +278,32 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Query Databricks and email results.")
 
     # Allow both --query and --query_file
-    query_group = parser.add_mutually_exclusive_group(required=True) # Requires one of them
-    query_group.add_argument("query", nargs="?", help="The SQL query to execute.")  # nargs="?" makes it optional within the group
+    query_group = parser.add_mutually_exclusive_group(
+        required=True
+    )  # Requires one of them
+    query_group.add_argument(
+        "query", nargs="?", help="The SQL query to execute."
+    )  # nargs="?" makes it optional within the group
     query_group.add_argument("--query_file", help="Path to the SQL query file")
 
-
-
-    parser.add_argument("email", help="Comma-separated list of recipient email addresses.")
-    parser.add_argument("--subject", help="Email subject", default="Scheduled Smart Report From ProInsight")
+    parser.add_argument(
+        "email", help="Comma-separated list of recipient email addresses."
+    )
+    parser.add_argument(
+        "--subject",
+        help="Email subject",
+        default="Scheduled Smart Report From ProInsight",
+    )
 
     args = parser.parse_args()
 
     email_recipients = [email.strip() for email in args.email.split(",")]
 
-
     if args.query_file:
-         with open(args.query_file, 'r') as f:
-             query = f.read()
+        with open(args.query_file, "r") as f:
+            query = f.read()
     else:
         query = args.query
-
 
     query_databricks_and_email(
         query, email_recipients, args.subject, server_hostname, http_path, access_token

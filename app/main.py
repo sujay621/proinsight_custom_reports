@@ -183,29 +183,19 @@ async def send_report(
         # Parse the emails JSON string back to a list
         email_list = json.loads(emails)
 
-        # Read the CSV file content
+        # Read the file content
         contents = await file.read()
-        csv_string = contents.decode()
 
-        # Convert CSV string to pandas DataFrame
-        df = pd.read_csv(StringIO(csv_string))
-
-        # Save the file temporarily
-        reports_folder = "reports"
-        if not os.path.exists(reports_folder):
-            os.makedirs(reports_folder)
-
-        filename = f"smart_report_{datetime.now().strftime('%Y%m%d%H%M%S')}.csv"
-        filepath = os.path.join(reports_folder, filename)
-        df.to_csv(filepath, index=False)
-
-        # Read the file and encode it for email attachment
-        with open(filepath, "rb") as f:
-            file_content_base64 = base64.b64encode(f.read()).decode("utf-8")
+        # Create base64 encoded content
+        file_content_base64 = base64.b64encode(contents).decode("utf-8")
 
         # Prepare email attachment
         email_attachments = [
-            {"type": "base64_encoded", "filename": filename, "filepath": filepath}
+            {
+                "type": "base64_encoded",
+                "filename": file.filename,
+                "body": file_content_base64,
+            }
         ]
 
         # Send email using PTEmailHandler
@@ -214,17 +204,14 @@ async def send_report(
             EmailSubject="ProInsight Custom Report",
             EmailBodyContent="Dear Customer,\n\nPlease find attached the report from ProInsight.\n\nThanks\nTeam Prodigal",
             EmailAttachments=email_attachments,
+            EmailBodyType="plain",
         )
 
-        # Clean up the temporary file
-        # if os.path.exists(filepath):
-        #     os.remove(filepath)
-
-        if email_response["status"] == "success":
+        if email_response.get("status") == "success":
             return {
                 "message": "Report sent successfully",
                 "recipients": email_list,
-                "filename": filename,
+                "filename": file.filename,
                 "email_response": email_response,
             }
         else:
@@ -236,9 +223,6 @@ async def send_report(
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Invalid email list format")
     except Exception as e:
-        # Clean up the temporary file in case of error
-        # if "filepath" in locals() and os.path.exists(filepath):
-        #     os.remove(filepath)
         raise HTTPException(status_code=500, detail=f"Error sending report: {str(e)}")
 
 
