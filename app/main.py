@@ -106,7 +106,7 @@ current_tenant = {"name": None}
 async def fetch_query(request: QueryRequest):
     if not request.query or not request.query.strip():
         raise HTTPException(status_code=400, detail="Prompt cannot be empty")
-    
+
     # Get current tenant context
     if not request.tenant:
         raise HTTPException(status_code=400, detail="Tenant must be specified")
@@ -117,17 +117,15 @@ async def fetch_query(request: QueryRequest):
         config_path = Path("config/model.yaml")
         if not config_path.exists():
             raise HTTPException(
-                status_code=500, 
-                detail="Model configuration file not found"
+                status_code=500, detail="Model configuration file not found"
             )
-        
+
         try:
             with open(config_path, "r") as f:
                 prompt_config = yaml.safe_load(f)
         except yaml.YAMLError as e:
             raise HTTPException(
-                status_code=500,
-                detail=f"Error parsing model configuration: {str(e)}"
+                status_code=500, detail=f"Error parsing model configuration: {str(e)}"
             )
 
         # Generate LLM prompt and SQL query
@@ -135,8 +133,7 @@ async def fetch_query(request: QueryRequest):
             llm_prompt = get_llm_prompt(request.query, request.tenant)
         except (FileNotFoundError, ValueError) as e:
             raise HTTPException(
-                status_code=400,
-                detail=f"Error generating prompt: {str(e)}"
+                status_code=400, detail=f"Error generating prompt: {str(e)}"
             )
 
         try:
@@ -144,21 +141,20 @@ async def fetch_query(request: QueryRequest):
             sql_query = llm_helper.get_sql_query(prompt_config, llm_prompt)
         except Exception as e:
             raise HTTPException(
-                status_code=500,
-                detail=f"Error generating SQL query with LLM: {str(e)}"
+                status_code=500, detail=f"Error generating SQL query with LLM: {str(e)}"
             )
-        
+
         return {
             "original_prompt": request.query,
             "generated_sql": sql_query,
-            "tenant": request.tenant
+            "tenant": request.tenant,
         }
-        
+
     except Exception as e:
         raise HTTPException(
-            status_code=500, 
-            detail=f"Error generating SQL query: {str(e)}"
+            status_code=500, detail=f"Error generating SQL query: {str(e)}"
         )
+
 
 @app.get("/current-tenant", response_model=TenantResponse)
 async def get_current_tenant():
@@ -172,9 +168,11 @@ async def set_current_tenant(tenant: str):
     current_tenant["name"] = tenant
     return {"message": f"Current tenant set to: {tenant}"}
 
+
 class SendEmailRequest(BaseModel):
     emails: List[str]
     results: dict
+
 
 @app.post("/send-report")
 async def send_report(
@@ -184,11 +182,11 @@ async def send_report(
     try:
         # Parse the emails JSON string back to a list
         email_list = json.loads(emails)
-        
+
         # Read the CSV file content
         contents = await file.read()
         csv_string = contents.decode()
-        
+
         # Convert CSV string to pandas DataFrame
         df = pd.read_csv(StringIO(csv_string))
 
@@ -207,11 +205,7 @@ async def send_report(
 
         # Prepare email attachment
         email_attachments = [
-            {
-                "type": "base64_encoded",
-                "filename": filename,
-                "filepath": filepath
-            }
+            {"type": "base64_encoded", "filename": filename, "filepath": filepath}
         ]
 
         # Send email using PTEmailHandler
@@ -231,30 +225,29 @@ async def send_report(
                 "message": "Report sent successfully",
                 "recipients": email_list,
                 "filename": filename,
-                "email_response": email_response
+                "email_response": email_response,
             }
         else:
             raise HTTPException(
                 status_code=500,
-                detail=f"Error sending email: {email_response.get('error', 'Unknown error')}"
+                detail=f"Error sending email: {email_response.get('error', 'Unknown error')}",
             )
-        
+
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Invalid email list format")
     except Exception as e:
         # Clean up the temporary file in case of error
-        if 'filepath' in locals() and os.path.exists(filepath):
+        if "filepath" in locals() and os.path.exists(filepath):
             os.remove(filepath)
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error sending report: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail=f"Error sending report: {str(e)}")
+
 
 class ScheduleRequest(BaseModel):
     tenant: str
     email: list[str]
     time: str
     frequency: str
+
 
 @app.post("/schedule-report")
 async def schedule_report(request: ScheduleRequest):
@@ -263,7 +256,7 @@ async def schedule_report(request: ScheduleRequest):
         # 1. Validate the schedule request
         # 2. Store the schedule in your database
         # 3. Set up the actual scheduling mechanism (e.g., using celery, airflow, etc.)
-        
+
         # For now, we'll just return a success response
         return {
             "message": "Report scheduled successfully",
@@ -271,11 +264,16 @@ async def schedule_report(request: ScheduleRequest):
                 "tenant": request.tenant,
                 "email": request.email,
                 "time": request.time,
-                "frequency": request.frequency
-            }
+                "frequency": request.frequency,
+            },
         }
     except Exception as e:
         raise HTTPException(
-            status_code=500,
-            detail=f"Error scheduling report: {str(e)}"
+            status_code=500, detail=f"Error scheduling report: {str(e)}"
         )
+
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for Docker container."""
+    return {"status": "healthy"}
