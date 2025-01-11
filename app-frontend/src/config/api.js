@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://proinsight-custom-report.internal-tools.aws.prodigaltech.com'; 

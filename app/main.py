@@ -217,8 +217,8 @@ async def send_report(
         )
 
         # Clean up the temporary file
-        if os.path.exists(filepath):
-            os.remove(filepath)
+        # if os.path.exists(filepath):
+        #     os.remove(filepath)
 
         if email_response["status"] == "success":
             return {
@@ -237,8 +237,8 @@ async def send_report(
         raise HTTPException(status_code=400, detail="Invalid email list format")
     except Exception as e:
         # Clean up the temporary file in case of error
-        if "filepath" in locals() and os.path.exists(filepath):
-            os.remove(filepath)
+        # if "filepath" in locals() and os.path.exists(filepath):
+        #     os.remove(filepath)
         raise HTTPException(status_code=500, detail=f"Error sending report: {str(e)}")
 
 
@@ -271,9 +271,3 @@ async def schedule_report(request: ScheduleRequest):
         raise HTTPException(
             status_code=500, detail=f"Error scheduling report: {str(e)}"
         )
-
-
-@app.get("/health")
-async def health_check():
-    """Health check endpoint for Docker container."""
-    return {"status": "healthy"}

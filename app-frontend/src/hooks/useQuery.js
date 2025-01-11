@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 export const useQuery = () => {
     const [results, setResults] = useState(null);
@@ -13,7 +14,7 @@ export const useQuery = () => {
         
         try {
             // First, get the SQL query from the LLM
-            const queryResponse = await axios.post('http://localhost:8000/fetch-query', {
+            const queryResponse = await axios.post(`${API_BASE_URL}/fetch-query`, {
                 query: prompt,
                 tenant: tenant
             });
@@ -22,7 +23,7 @@ export const useQuery = () => {
             setGeneratedSQL(sqlQuery);
 
             // Then execute the generated query
-            const resultsResponse = await axios.post('http://localhost:8000/execute-query', {
+            const resultsResponse = await axios.post(`${API_BASE_URL}/execute-query`, {
                 query: sqlQuery,
                 tenant: tenant
             });

@@ -7,6 +7,7 @@ import { Button, Container, Box } from '@mui/material';
 import { TenantProvider } from './context/TenantContext';
 import { useTenant } from './hooks/useTenant';
 import axios from 'axios';
+import { API_BASE_URL } from './config/api';
 
 // Create a wrapper component to use the context
 const AppContent = () => {
@@ -81,7 +82,7 @@ const AppContent = () => {
             formData.append('emails', JSON.stringify(emailData.emails));
 
             // Send POST request with FormData
-            const response = await axios.post('http://localhost:8000/send-report', formData, {
+            const response = await axios.post(`${API_BASE_URL}/send-report`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
