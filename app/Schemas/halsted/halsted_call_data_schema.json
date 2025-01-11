@@ -1,0 +1,3819 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "_id": "string",
+    "agent_id": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "audioFilePath": "string",
+    "audioMetadata": {
+        "audio-bitrate": "string",
+        "audio-duration": "double",
+        "audio-num-channels": "string",
+        "audio-sample-rate": "string",
+        "audio_type": "string",
+        "bitrate": "double",
+        "callRecordId": "string",
+        "duration": "double",
+        "filename": "string",
+        "num_channels": "bigint",
+        "sample_rate": "double",
+        "sha256": "string"
+    },
+    "audio_filepath": "string",
+    "borrower_id": "string",
+    "callMetadata": {
+        "AGENT": "string",
+        "BALANCE": "string",
+        "CALL__DIRECTION": "string",
+        "CALL__RESULT/DISPOSITION": "string",
+        "CLIENT__NAME": "string",
+        "DATE/TIME": "string",
+        "DURATION": "string",
+        "FILE__NAME": "string",
+        "FIRST__NAME": "string",
+        "FROM__NUMBER": "string",
+        "HFS__ID": "string",
+        "LAST__NAME": "string",
+        "LEGAL_STATUS": "string",
+        "SEGMENT": "string",
+        "SPANISH_SPEAKING": "string",
+        "STATE": "string",
+        "TO__NUMBER": "string",
+        "date": "string",
+        "ingestionCollectionName": "string",
+        "origName": "string",
+        "ACCOUNT_STATUS": "string",
+        "RECOVERY_SCORE": "string",
+        "CHARGE_OFF_DATE": "string",
+        "CREDIT_SCORE": "string",
+        "LENDER": "string"
+    },
+    "called_at": "timestamp",
+    "connector_id": "string",
+    "date": "string",
+    "dialerMetadata": {
+        "AGENT__RESULT": "string",
+        "DNIS": "string",
+        "account": "string",
+        "agent": "string",
+        "balance": "string",
+        "clientDetails": {
+            "Client__Name": "string"
+        },
+        "direction": "string",
+        "name": "string",
+        "phone": "string",
+        "recordingID": "string",
+        "service": "string",
+        "state": "string",
+        "termCode": "string",
+        "legal_status": "string",
+        "contactCode": "string",
+        "DBRCLMISC3": "string",
+        "DBR_LAST_CHG_DATE_O": "string",
+        "dncType": "string"
+    },
+    "download_basepath": "string",
+    "efsKey": "string",
+    "engine": "string",
+    "filename": "string",
+    "hasSpeakerInfo": "boolean",
+    "ignore_dedupe_checks": "boolean",
+    "intentEngineResult": {
+        "accountExplorer": {
+            "do_not_call": {
+                "dncResult": {
+                    "dncLabel": "bigint",
+                    "posSpans": {
+                        "type": "array",
+                        "element": {
+                            "proba": "double",
+                            "span": "string"
+                        }
+                    }
+                }
+            },
+            "obtained_consent_to_callback": {
+                "askedForConsentToCallbackResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": {
+                            "context": "string",
+                            "end": "double",
+                            "nonPunctuatedSpan": "string",
+                            "proba": "double",
+                            "span": "string",
+                            "start": "double",
+                            "utIdx": "bigint"
+                        }
+                    },
+                    "status": "boolean"
+                },
+                "obtainedConsentToCallbackResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": {
+                            "_id": "string",
+                            "attributes": {
+                                "consentAskEndTime": "double",
+                                "consentAskStartTime": "double",
+                                "consentAskedNonPunctuatedSpan": "string",
+                                "consentAskedSpan": "string",
+                                "proba": "double"
+                            },
+                            "context": "string",
+                            "end": "double",
+                            "match": "string",
+                            "start": "double"
+                        }
+                    },
+                    "status": "boolean"
+                }
+            },
+            "obtained_consent_to_email": {
+                "askedForConsentToEmailResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                },
+                "obtainedConsentToEmailResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "right_party_check": {
+                "rpcResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "sentiment": {
+                "call_score": {
+                    "sentiment_agent": "bigint",
+                    "sentiment_borrower": "bigint"
+                },
+                "request_id": "string",
+                "utterance_score": {
+                    "type": "array",
+                    "element": {
+                        "sentiment": {
+                            "negative": "double",
+                            "neutral": "double",
+                            "positive": "double",
+                            "prediction": "string"
+                        },
+                        "speaker": "string",
+                        "text": "string"
+                    }
+                }
+            },
+            "unemployed_check": {
+                "unemployedResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "I60": {
+                "endpointResult": {
+                    "predictedSpan": "string",
+                    "transcript": "string",
+                    "predictedLabel": "boolean"
+                }
+            },
+            "I2540": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2550": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2560": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2570": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2580": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2590": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1000": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1010": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1020": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1030": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1040": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1050": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1060": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1070": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1080": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1090": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1100": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            }
+        }
+    },
+    "isDirOutbound": "boolean",
+    "isDummyMetaData": "boolean",
+    "isRedactionProcessed": "boolean",
+    "isTest": "boolean",
+    "numSearchResults": "bigint",
+    "orig_filename": "string",
+    "preferredMetadata": {
+        "accountNumber": "string",
+        "agentDisposition": "string",
+        "agentId": "string",
+        "audioFilename": "string",
+        "balance": "string",
+        "callCenterName": "string",
+        "callDateTime": "timestamp",
+        "callDirection": "bigint",
+        "campaign": "string",
+        "clientName": "string",
+        "consumerName": "string",
+        "phoneNumber": "string"
+    },
+    "rawEngineResult": {
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "start_index_word_array": {
+                                "type": "array",
+                                "element": "bigint"
+                            },
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "punctuated_word": "string",
+                                    "start": "double",
+                                    "word": "string"
+                                }
+                            }
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "record_id": "string",
+    "redactionTimeSpanArray": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "stime": "double"
+        }
+    },
+    "searchResult": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "eventType": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "sha256": "string",
+    "sha256_config": "string",
+    "sha256_redacted": "string",
+    "source_id": "string",
+    "source_s3_key": "string",
+    "speakers": {
+        "agent": "bigint",
+        "borrower": "bigint"
+    },
+    "status": "string",
+    "tags": {
+        "type": "array",
+        "element": "string"
+    },
+    "talkMetrics": {
+        "agent": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "borrower": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "duration": {
+            "agent_talk_percentage": "double",
+            "borrower_talk_percentage": "double",
+            "streak_agent": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "streak_borrower": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "total_active_talk_time": "double",
+            "total_audio_duration": "double",
+            "total_duration_agent": "double",
+            "total_duration_borrower": "double",
+            "total_percent_silence": "double",
+            "total_talk_time": "double",
+            "total_time_silence": "double",
+            "total_utterances_agent": "bigint",
+            "total_utterances_borrower": "bigint",
+            "total_words_agent": "bigint",
+            "total_words_borrower": "bigint"
+        },
+        "max_overtalk_length": "double",
+        "max_pause_length": "double",
+        "max_streak_agent": "bigint",
+        "max_streak_borrower": "bigint",
+        "num_longpause": "bigint",
+        "num_pause": "bigint",
+        "percent_overtalk_length": "double",
+        "percent_silence_length": "double",
+        "talk_rate_agent": "double",
+        "talk_rate_borrower": "double",
+        "total_length_longpause": "double",
+        "total_length_pause": "double",
+        "total_overtalk_length": "double",
+        "track_longpause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_overtalk_timespan": {
+            "type": "array",
+            "element": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_pause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_talk_span_length": {
+            "type": "array",
+            "element": {
+                "etime": "double",
+                "span": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_longpause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_pause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        }
+    },
+    "tenant_id": "string",
+    "transcription": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "offset": "bigint",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcriptionConfig": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "diarizationFunction": "string",
+        "isDiarizationRequired": "boolean",
+        "language": "string",
+        "model": "string",
+        "numerals": "boolean",
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        },
+        "version": "string",
+        "speakerConfiguration": {
+            "agent": "bigint",
+            "borrower": "bigint"
+        },
+        "tier": "string",
+        "nonenglishmodel": "string"
+    },
+    "transcriptionMetadata": {
+        "channels": "bigint",
+        "created": "string",
+        "duplicate": "boolean",
+        "duplicate_id": "string",
+        "duration": "double",
+        "model_info": {
+            "8109a203-c6c9-413c-bb98-aaa40c9aac1c": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "1d02e01c-f076-44af-a314-cb6904b76912": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "66d31423-0768-4ef7-bb79-c5961ce2e7ec": {
+                "arch": "string",
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            }
+        },
+        "models": {
+            "type": "array",
+            "element": "string"
+        },
+        "processing_time": "double",
+        "request_id": "string",
+        "sha256": "string",
+        "status": "string",
+        "tags": {
+            "type": "array",
+            "element": "string"
+        },
+        "timeForTranscription": "double",
+        "transaction_key": "string"
+    },
+    "uploadTS": "timestamp",
+    "validation_status": {
+        "AGENT": "string",
+        "BALANCE": "string",
+        "CALL__DIRECTION": "string",
+        "CALL__RESULT/DISPOSITION": "string",
+        "CLIENT__NAME": "string",
+        "DATE/TIME": "string",
+        "FILE__NAME": "string",
+        "FIRST__NAME": "string",
+        "FROM__NUMBER": "string",
+        "HFS__ID": "string",
+        "LAST__NAME": "string",
+        "STATE": "string",
+        "TO__NUMBER": "string",
+        "ACCOUNT_STATUS": "string"
+    },
+    "violation_status": "boolean",
+    "violations_20230916": {
+        "type": "array",
+        "element": "string"
+    },
+    "__rescued_data": "string",
+    "__extra_cols_with_spec_chars": "string",
+    "callScore": "bigint",
+    "numberOfNotes": "bigint",
+    "res_id": "string",
+    "violation_status_20211222": "boolean",
+    "violation_status_20211223": "boolean",
+    "violation_status_20211224": "boolean",
+    "violation_status_20211228": "boolean",
+    "violation_status_20211229": "boolean",
+    "violation_status_20211230": "boolean",
+    "violation_status_20211231": "boolean",
+    "violation_status_20220101": "boolean",
+    "violation_status_20220104": "boolean",
+    "violation_status_20220105": "boolean",
+    "violation_status_20220106": "boolean",
+    "violation_status_20220107": "boolean",
+    "violation_status_20220108": "boolean",
+    "violation_status_20220109": "boolean",
+    "violation_status_20220111": "boolean",
+    "violation_status_20220112": "boolean",
+    "violation_status_20220113": "boolean",
+    "violation_status_20220114": "boolean",
+    "violation_status_20220115": "boolean",
+    "violation_status_20220116": "boolean",
+    "violation_status_20220118": "boolean",
+    "violation_status_20220119": "boolean",
+    "violation_status_20220120": "boolean",
+    "violation_status_20220121": "boolean",
+    "violation_status_20220122": "boolean",
+    "violation_status_20220123": "boolean",
+    "violation_status_20220125": "boolean",
+    "violation_status_20220126": "boolean",
+    "violation_status_20220127": "boolean",
+    "violation_status_20220128": "boolean",
+    "violation_status_20220129": "boolean",
+    "violation_status_20220130": "boolean",
+    "violation_status_20220201": "boolean",
+    "violation_status_20220202": "boolean",
+    "violation_status_20220203": "boolean",
+    "violation_status_20220204": "boolean",
+    "violation_status_20220205": "boolean",
+    "violation_status_20220206": "boolean",
+    "violation_status_20220208": "boolean",
+    "violation_status_20220209": "boolean",
+    "violation_status_20220210": "boolean",
+    "violation_status_20220211": "boolean",
+    "violation_status_20220212": "boolean",
+    "violation_status_20220213": "boolean",
+    "violation_status_20220215": "boolean",
+    "violation_status_20220216": "boolean",
+    "violation_status_20220217": "boolean",
+    "violation_status_20220218": "boolean",
+    "violation_status_20220219": "boolean",
+    "violation_status_20220220": "boolean",
+    "violation_status_20220222": "boolean",
+    "violation_status_20220223": "boolean",
+    "violation_status_20220224": "boolean",
+    "violation_status_20220225": "boolean",
+    "violation_status_20220226": "boolean",
+    "violation_status_20220227": "boolean",
+    "violation_status_20220301": "boolean",
+    "violation_status_20220302": "boolean",
+    "violation_status_20220303": "boolean",
+    "violation_status_20220304": "boolean",
+    "violation_status_20220305": "boolean",
+    "violation_status_20220306": "boolean",
+    "violation_status_20220308": "boolean",
+    "violation_status_20220309": "boolean",
+    "violation_status_20220310": "boolean",
+    "violation_status_20220311": "boolean",
+    "violation_status_20220312": "boolean",
+    "violation_status_20220313": "boolean",
+    "violation_status_20220315": "boolean",
+    "violation_status_20220316": "boolean",
+    "violation_status_20220317": "boolean",
+    "violation_status_20220318": "boolean",
+    "violation_status_20220319": "boolean",
+    "violation_status_20220320": "boolean",
+    "violation_status_20220322": "boolean",
+    "violation_status_20220323": "boolean",
+    "violation_status_20220324": "boolean",
+    "violation_status_20220325": "boolean",
+    "violation_status_20220326": "boolean",
+    "violation_status_20220327": "boolean",
+    "violation_status_20220329": "boolean",
+    "violation_status_20220330": "boolean",
+    "violation_status_20220331": "boolean",
+    "violation_status_20220401": "boolean",
+    "violation_status_20220402": "boolean",
+    "violation_status_20220403": "boolean",
+    "violation_status_20220405": "boolean",
+    "violation_status_20220406": "boolean",
+    "violation_status_20220407": "boolean",
+    "violation_status_20220408": "boolean",
+    "violation_status_20220409": "boolean",
+    "violation_status_20220410": "boolean",
+    "violation_status_20220412": "boolean",
+    "violation_status_20220413": "boolean",
+    "violation_status_20220414": "boolean",
+    "violation_status_20220415": "boolean",
+    "violation_status_20220416": "boolean",
+    "violation_status_20220417": "boolean",
+    "violation_status_20220419": "boolean",
+    "violation_status_20220420": "boolean",
+    "violation_status_20220421": "boolean",
+    "violation_status_20220422": "boolean",
+    "violation_status_20220423": "boolean",
+    "violation_status_20220424": "boolean",
+    "violation_status_20220426": "boolean",
+    "violation_status_20220427": "boolean",
+    "violation_status_20220428": "boolean",
+    "violation_status_20220429": "boolean",
+    "violation_status_20220430": "boolean",
+    "violation_status_20220501": "boolean",
+    "violation_status_20220503": "boolean",
+    "violation_status_20220504": "boolean",
+    "violation_status_20220505": "boolean",
+    "violation_status_20220507": "boolean",
+    "violation_status_20220508": "boolean",
+    "violation_status_20220510": "boolean",
+    "violation_status_20220511": "boolean",
+    "violation_status_20220512": "boolean",
+    "violation_status_20220513": "boolean",
+    "violation_status_20220514": "boolean",
+    "violation_status_20220515": "boolean",
+    "violation_status_20220517": "boolean",
+    "violation_status_20220518": "boolean",
+    "violation_status_20220519": "boolean",
+    "violation_status_20220520": "boolean",
+    "violation_status_20220521": "boolean",
+    "violation_status_20220523": "boolean",
+    "violation_status_20220524": "boolean",
+    "violation_status_20220525": "boolean",
+    "violation_status_20220526": "boolean",
+    "violation_status_20220527": "boolean",
+    "violation_status_20220528": "boolean",
+    "violation_status_20220529": "boolean",
+    "violation_status_20220531": "boolean",
+    "violation_status_20220601": "boolean",
+    "violation_status_20220602": "boolean",
+    "violation_status_20220603": "boolean",
+    "violation_status_20220604": "boolean",
+    "violation_status_20220605": "boolean",
+    "violation_status_20220607": "boolean",
+    "violation_status_20220608": "boolean",
+    "violation_status_20220609": "boolean",
+    "violation_status_20220610": "boolean",
+    "violation_status_20220611": "boolean",
+    "violation_status_20220612": "boolean",
+    "violation_status_20220615": "boolean",
+    "violation_status_20220616": "boolean",
+    "violation_status_20220617": "boolean",
+    "violation_status_20220618": "boolean",
+    "violation_status_20220621": "boolean",
+    "violation_status_20220622": "boolean",
+    "violation_status_20220623": "boolean",
+    "violation_status_20220624": "boolean",
+    "violation_status_20220625": "boolean",
+    "violation_status_20220626": "boolean",
+    "violation_status_20220628": "boolean",
+    "violation_status_20220629": "boolean",
+    "violation_status_20220630": "boolean",
+    "violation_status_20220701": "boolean",
+    "violation_status_20220702": "boolean",
+    "violation_status_20220703": "boolean",
+    "violation_status_20220706": "boolean",
+    "violation_status_20220707": "boolean",
+    "violation_status_20220708": "boolean",
+    "violation_status_20220709": "boolean",
+    "violation_status_20220710": "boolean",
+    "violation_status_20220712": "boolean",
+    "violation_status_20220713": "boolean",
+    "violation_status_20220714": "boolean",
+    "violation_status_20220715": "boolean",
+    "violation_status_20220718": "boolean",
+    "violation_status_20220719": "boolean",
+    "violation_status_20220720": "boolean",
+    "violation_status_20220721": "boolean",
+    "violation_status_20220722": "boolean",
+    "violation_status_20220723": "boolean",
+    "violation_status_20220724": "boolean",
+    "violation_status_20220726": "boolean",
+    "violation_status_20220727": "boolean",
+    "violation_status_20220728": "boolean",
+    "violation_status_20220729": "boolean",
+    "violation_status_20220730": "boolean",
+    "violation_status_20220731": "boolean",
+    "violation_status_20220802": "boolean",
+    "violation_status_20220803": "boolean",
+    "violation_status_20220804": "boolean",
+    "violation_status_20220805": "boolean",
+    "violation_status_20220806": "boolean",
+    "violation_status_20220807": "boolean",
+    "violation_status_20220808": "boolean",
+    "violation_status_20220809": "boolean",
+    "violation_status_20220810": "boolean",
+    "violation_status_20220811": "boolean",
+    "violation_status_20220812": "boolean",
+    "violation_status_20220813": "boolean",
+    "violation_status_20220814": "boolean",
+    "violation_status_20220816": "boolean",
+    "violation_status_20220817": "boolean",
+    "violation_status_20220820": "boolean",
+    "violation_status_20220821": "boolean",
+    "violation_status_20220823": "boolean",
+    "violation_status_20220824": "boolean",
+    "violation_status_20220825": "boolean",
+    "violation_status_20220826": "boolean",
+    "violation_status_20220827": "boolean",
+    "violation_status_20220828": "boolean",
+    "violation_status_20220830": "boolean",
+    "violation_status_20220831": "boolean",
+    "violation_status_20220901": "boolean",
+    "violation_status_20220902": "boolean",
+    "violation_status_20220903": "boolean",
+    "violation_status_20220904": "boolean",
+    "violation_status_20220906": "boolean",
+    "violation_status_20220907": "boolean",
+    "violation_status_20220908": "boolean",
+    "violation_status_20220909": "boolean",
+    "violation_status_20220910": "boolean",
+    "violation_status_20220913": "boolean",
+    "violation_status_20220914": "boolean",
+    "violation_status_20220915": "boolean",
+    "violation_status_20220916": "boolean",
+    "violation_status_20220917": "boolean",
+    "violation_status_20220919": "boolean",
+    "violation_status_20220920": "boolean",
+    "violation_status_20220921": "boolean",
+    "violation_status_20220922": "boolean",
+    "violation_status_20220923": "boolean",
+    "violation_status_20220924": "boolean",
+    "violation_status_20220925": "boolean",
+    "violation_status_20220927": "boolean",
+    "violation_status_20220928": "boolean",
+    "violation_status_20220929": "boolean",
+    "violation_status_20220930": "boolean",
+    "violation_status_20221001": "boolean",
+    "violation_status_20221002": "boolean",
+    "violation_status_20221004": "boolean",
+    "violation_status_20221005": "boolean",
+    "violation_status_20221006": "boolean",
+    "violation_status_20221007": "boolean",
+    "violation_status_20221008": "boolean",
+    "violation_status_20221009": "boolean",
+    "violation_status_20221011": "boolean",
+    "violation_status_20221012": "boolean",
+    "violation_status_20221014": "boolean",
+    "violation_status_20221015": "boolean",
+    "violation_status_20221016": "boolean",
+    "violation_status_20221018": "boolean",
+    "violation_status_20221019": "boolean",
+    "violation_status_20221020": "boolean",
+    "violation_status_20221021": "boolean",
+    "violation_status_20221022": "boolean",
+    "violation_status_20221023": "boolean",
+    "violation_status_20221025": "boolean",
+    "violation_status_20221026": "boolean",
+    "violation_status_20221027": "boolean",
+    "violation_status_20221028": "boolean",
+    "violation_status_20221029": "boolean",
+    "violation_status_20221030": "boolean",
+    "violation_status_20221101": "boolean",
+    "violation_status_20221102": "boolean",
+    "violation_status_20221103": "boolean",
+    "violation_status_20221104": "boolean",
+    "violation_status_20221105": "boolean",
+    "violation_status_20221106": "boolean",
+    "violation_status_20221108": "boolean",
+    "violation_status_20221109": "boolean",
+    "violation_status_20221110": "boolean",
+    "violation_status_20221111": "boolean",
+    "violation_status_20221112": "boolean",
+    "violation_status_20221113": "boolean",
+    "violation_status_20221115": "boolean",
+    "violation_status_20221116": "boolean",
+    "violation_status_20221117": "boolean",
+    "violation_status_20221118": "boolean",
+    "violation_status_20221119": "boolean",
+    "violation_status_20221120": "boolean",
+    "violation_status_20221122": "boolean",
+    "violation_status_20221123": "boolean",
+    "violation_status_20221124": "boolean",
+    "violation_status_20221125": "boolean",
+    "violation_status_20221126": "boolean",
+    "violation_status_20221127": "boolean",
+    "violation_status_20221129": "boolean",
+    "violation_status_20221130": "boolean",
+    "violation_status_20221201": "boolean",
+    "violation_status_20221202": "boolean",
+    "violation_status_20221203": "boolean",
+    "violation_status_20221204": "boolean",
+    "violation_status_20221206": "boolean",
+    "violation_status_20221207": "boolean",
+    "violation_status_20221208": "boolean",
+    "violation_status_20221209": "boolean",
+    "violation_status_20221210": "boolean",
+    "violation_status_20221211": "boolean",
+    "violation_status_20221213": "boolean",
+    "violation_status_20221214": "boolean",
+    "violation_status_20221215": "boolean",
+    "violation_status_20221216": "boolean",
+    "violation_status_20221217": "boolean",
+    "violation_status_20221218": "boolean",
+    "violation_status_20221220": "boolean",
+    "violation_status_20221221": "boolean",
+    "violation_status_20221222": "boolean",
+    "violation_status_20221223": "boolean",
+    "violation_status_20221224": "boolean",
+    "violation_status_20221225": "boolean",
+    "violation_status_20221227": "boolean",
+    "violation_status_20221228": "boolean",
+    "violation_status_20221229": "boolean",
+    "violation_status_20221230": "boolean",
+    "violation_status_20221231": "boolean",
+    "violation_status_20230101": "boolean",
+    "violation_status_20230103": "boolean",
+    "violation_status_20230104": "boolean",
+    "violation_status_20230105": "boolean",
+    "violation_status_20230106": "boolean",
+    "violation_status_20230107": "boolean",
+    "violation_status_20230108": "boolean",
+    "violation_status_20230110": "boolean",
+    "violation_status_20230111": "boolean",
+    "violation_status_20230112": "boolean",
+    "violation_status_20230113": "boolean",
+    "violation_status_20230114": "boolean",
+    "violation_status_20230115": "boolean",
+    "violation_status_20230117": "boolean",
+    "violation_status_20230118": "boolean",
+    "violation_status_20230119": "boolean",
+    "violation_status_20230120": "boolean",
+    "violation_status_20230121": "boolean",
+    "violation_status_20230122": "boolean",
+    "violation_status_20230124": "boolean",
+    "violation_status_20230125": "boolean",
+    "violation_status_20230126": "boolean",
+    "violation_status_20230127": "boolean",
+    "violation_status_20230128": "boolean",
+    "violation_status_20230129": "boolean",
+    "violation_status_20230131": "boolean",
+    "violation_status_20230201": "boolean",
+    "violation_status_20230202": "boolean",
+    "violation_status_20230203": "boolean",
+    "violation_status_20230204": "boolean",
+    "violation_status_20230205": "boolean",
+    "violation_status_20230207": "boolean",
+    "violation_status_20230208": "boolean",
+    "violation_status_20230209": "boolean",
+    "violation_status_20230210": "boolean",
+    "violation_status_20230211": "boolean",
+    "violation_status_20230212": "boolean",
+    "violation_status_20230214": "boolean",
+    "violation_status_20230215": "boolean",
+    "violation_status_20230216": "boolean",
+    "violation_status_20230217": "boolean",
+    "violation_status_20230218": "boolean",
+    "violation_status_20230219": "boolean",
+    "violation_status_20230221": "boolean",
+    "violation_status_20230222": "boolean",
+    "violation_status_20230223": "boolean",
+    "violation_status_20230224": "boolean",
+    "violation_status_20230225": "boolean",
+    "violation_status_20230226": "boolean",
+    "violation_status_20230228": "boolean",
+    "violation_status_20230301": "boolean",
+    "violation_status_20230302": "boolean",
+    "violation_status_20230303": "boolean",
+    "violation_status_20230304": "boolean",
+    "violation_status_20230305": "boolean",
+    "violation_status_20230307": "boolean",
+    "violation_status_20230308": "boolean",
+    "violation_status_20230309": "boolean",
+    "violation_status_20230310": "boolean",
+    "violation_status_20230311": "boolean",
+    "violation_status_20230312": "boolean",
+    "violation_status_20230314": "boolean",
+    "violation_status_20230315": "boolean",
+    "violation_status_20230316": "boolean",
+    "violation_status_20230317": "boolean",
+    "violation_status_20230318": "boolean",
+    "violation_status_20230319": "boolean",
+    "violation_status_20230321": "boolean",
+    "violation_status_20230322": "boolean",
+    "violation_status_20230323": "boolean",
+    "violation_status_20230324": "boolean",
+    "violation_status_20230325": "boolean",
+    "violation_status_20230326": "boolean",
+    "violations": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211222": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211223": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211228": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211229": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211230": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20211231": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220101": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220104": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220105": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220106": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220107": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220108": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220109": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220111": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220112": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220113": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220114": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220115": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220116": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220118": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220119": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220120": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220121": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220122": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220123": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220125": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220126": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220127": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220128": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220129": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220130": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220201": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220202": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220203": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220204": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220205": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220206": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220208": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220209": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220210": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220211": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220212": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220213": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220215": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220216": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220217": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220218": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220219": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220220": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220222": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220223": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220225": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220226": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220227": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220301": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220302": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220303": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220304": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220305": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220306": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220308": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220309": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220310": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220311": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220312": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220313": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220315": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220316": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220317": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220318": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220319": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220320": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220322": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220323": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220324": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220325": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220326": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220327": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220329": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220330": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220331": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220401": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220402": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220403": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220405": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220406": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220407": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220408": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220409": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220410": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220412": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220413": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220414": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220415": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220416": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220417": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220419": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220420": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220421": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220422": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220423": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220424": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220426": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220427": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220428": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220429": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220430": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220501": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220503": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220504": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220505": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220507": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220508": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220510": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220511": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220512": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220513": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220514": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220515": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220517": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220518": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220519": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220520": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220521": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220524": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220525": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220526": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220527": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220528": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220529": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220531": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220601": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220602": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220603": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220604": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220605": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220607": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220608": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220609": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220610": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220611": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220612": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220615": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220616": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220617": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220618": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220621": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220622": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220623": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220624": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220625": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220626": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220628": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220629": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220630": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220701": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220702": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220703": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220706": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220707": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220708": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220709": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220710": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220712": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220713": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220714": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220715": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220718": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220719": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220720": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220721": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220722": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220723": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220724": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220726": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220727": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220729": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220730": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220731": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220802": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220803": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220804": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220805": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220806": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220807": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220808": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220809": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220810": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220811": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220812": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220813": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220814": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220816": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220817": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220820": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220821": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220824": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220825": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220826": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220827": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220828": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220830": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220831": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220901": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220902": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220903": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220904": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220906": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220907": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220908": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220909": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220910": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220913": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220914": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220915": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220916": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220917": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220919": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220920": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220921": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220922": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220923": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220924": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220925": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220927": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220928": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220929": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20220930": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221001": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221002": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221004": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221005": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221006": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221007": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221008": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221009": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221011": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221012": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221014": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221015": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221016": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221018": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221019": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221020": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221021": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221022": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221023": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221025": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221026": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221027": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221028": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221029": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221030": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221101": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221102": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221103": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221104": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221105": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221106": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221108": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221109": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221110": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221111": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221112": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221113": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221115": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221116": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221117": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221118": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221119": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221120": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221122": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221123": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221124": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221125": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221126": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221127": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221129": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221130": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221201": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221202": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221203": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221204": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221206": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221207": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221208": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221209": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221210": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221211": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221213": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221214": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221215": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221216": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221217": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221218": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221220": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221221": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221222": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221223": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221225": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221227": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221228": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221229": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221230": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20221231": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230101": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230103": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230104": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230105": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230106": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230107": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230108": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230110": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230111": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230112": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230113": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230114": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230115": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230117": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230118": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230119": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230120": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230121": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230122": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230124": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230125": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230126": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230127": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230128": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230129": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230131": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230201": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230202": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230203": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230204": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230205": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230207": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230208": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230209": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230210": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230211": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230212": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230214": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230215": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230216": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230217": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230218": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230219": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230221": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230222": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230223": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230225": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230226": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230228": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230301": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230302": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230303": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230304": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230305": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230307": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230308": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230309": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230310": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230311": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230312": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230314": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230315": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230316": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230317": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230318": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230319": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230321": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230322": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230323": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230324": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230325": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20230326": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "__is_backfill": "boolean",
+    "__extra_fields": "string",
+    "__is_corrupt_data": "boolean",
+    "autoArchived": "boolean",
+    "customFilename": "string",
+    "__corrupt_json_reason": "string",
+    "scores": {
+        "sentimentScore": {
+            "agent_sentiment_score": "double",
+            "borrower_sentiment_score": "double"
+        }
+    },
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string",
+    "language": "string"
+}

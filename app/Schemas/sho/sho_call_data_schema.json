@@ -1,0 +1,413 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "autoArchived": "boolean",
+    "_id": "string",
+    "agent_id": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "audioFilePath": "string",
+    "audioMetadata": {
+        "audio-bitrate": "string",
+        "audio-duration": "double",
+        "audio-num-channels": "string",
+        "audio-sample-rate": "string",
+        "audio_type": "string",
+        "bitrate": "double",
+        "callRecordId": "string",
+        "duration": "double",
+        "filename": "string",
+        "num_channels": "bigint",
+        "sample_rate": "double",
+        "sha256": "string"
+    },
+    "audio_filepath": "string",
+    "borrower_id": "string",
+    "callMetadata": {
+        "ACCOUNT_STATUS": "string",
+        "AGENT": "string",
+        "BALANCE": "string",
+        "CALL__DIRECTION": "string",
+        "CALL__RESULT/DISPOSITION": "string",
+        "CLIENT__NAME": "string",
+        "DATE/TIME": "string",
+        "DRS__ID": "string",
+        "DURATION": "string",
+        "FILE__NAME": "string",
+        "FIRST__NAME": "string",
+        "FROM__NUMBER": "string",
+        "LAST__NAME": "string",
+        "LEGAL_STATUS": "string",
+        "RECOVERY_SCORE": "string",
+        "SEGMENT": "string",
+        "SPANISH_SPEAKING": "string",
+        "STATE": "string",
+        "TO__NUMBER": "string",
+        "SO__ID": "string",
+        "CHARGE_OFF_DATE": "string",
+        "CREDIT_SCORE": "string",
+        "LENDER": "string"
+    },
+    "called_at": "timestamp",
+    "connector_id": "string",
+    "customFilename": "string",
+    "date": "string",
+    "dialerMetadata": {
+        "AGENT__RESULT": "string",
+        "DBRCLMISC3": "string",
+        "DNIS": "string",
+        "account": "string",
+        "agent": "string",
+        "balance": "string",
+        "clientDetails": {
+            "Client__Name": "string"
+        },
+        "contactCode": "string",
+        "direction": "string",
+        "name": "string",
+        "phone": "string",
+        "recordingID": "string",
+        "service": "string",
+        "state": "string",
+        "termCode": "string",
+        "attorney": "string",
+        "contact_type": "string",
+        "langCode": "string",
+        "DBR_LAST_CHG_DATE_O": "string",
+        "dncType": "string"
+    },
+    "download_basepath": "string",
+    "efsKey": "string",
+    "engine": "string",
+    "filename": "string",
+    "hasSpeakerInfo": "boolean",
+    "ignore_dedupe_checks": "boolean",
+    "isDirOutbound": "boolean",
+    "isDummyMetaData": "boolean",
+    "isTest": "boolean",
+    "numSearchResults": "bigint",
+    "orig_filename": "string",
+    "preferredMetadata": {
+        "accountNumber": "string",
+        "agentDisposition": "string",
+        "agentId": "string",
+        "audioFilename": "string",
+        "balance": "string",
+        "callCenterName": "string",
+        "callDateTime": "timestamp",
+        "callDirection": "bigint",
+        "campaign": "string",
+        "clientName": "string",
+        "consumerName": "string",
+        "phoneNumber": "string"
+    },
+    "rawEngineResult": {
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "start_index_word_array": {
+                                "type": "array",
+                                "element": "bigint"
+                            },
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "punctuated_word": "string",
+                                    "start": "double",
+                                    "word": "string"
+                                }
+                            }
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "record_id": "string",
+    "redactionTimeSpanArray": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "stime": "double"
+        }
+    },
+    "scores": {
+        "sentimentScore": {
+            "agent_sentiment_score": "double",
+            "borrower_sentiment_score": "double"
+        }
+    },
+    "searchResult": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "eventType": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "sha256": "string",
+    "sha256_config": "string",
+    "sha256_redacted": "string",
+    "source_id": "string",
+    "source_s3_key": "string",
+    "speakers": {
+        "agent": "bigint",
+        "borrower": "bigint"
+    },
+    "status": "string",
+    "tags": {
+        "type": "array",
+        "element": "string"
+    },
+    "talkMetrics": {
+        "agent": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "borrower": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "duration": {
+            "agent_talk_percentage": "double",
+            "borrower_talk_percentage": "double",
+            "streak_agent": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "streak_borrower": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "total_active_talk_time": "double",
+            "total_audio_duration": "double",
+            "total_duration_agent": "double",
+            "total_duration_borrower": "double",
+            "total_percent_silence": "double",
+            "total_talk_time": "double",
+            "total_time_silence": "double",
+            "total_utterances_agent": "bigint",
+            "total_utterances_borrower": "bigint",
+            "total_words_agent": "bigint",
+            "total_words_borrower": "bigint"
+        },
+        "max_overtalk_length": "double",
+        "max_pause_length": "double",
+        "max_streak_agent": "bigint",
+        "max_streak_borrower": "bigint",
+        "num_longpause": "bigint",
+        "num_pause": "bigint",
+        "percent_overtalk_length": "double",
+        "percent_silence_length": "double",
+        "talk_rate_agent": "double",
+        "talk_rate_borrower": "double",
+        "total_length_longpause": "double",
+        "total_length_pause": "double",
+        "total_overtalk_length": "double",
+        "track_longpause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_overtalk_timespan": {
+            "type": "array",
+            "element": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_pause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_talk_span_length": {
+            "type": "array",
+            "element": {
+                "etime": "double",
+                "span": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_longpause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_pause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        }
+    },
+    "tenant_id": "string",
+    "transcription": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "offset": "bigint",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcriptionConfig": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "diarizationFunction": "string",
+        "isDiarizationRequired": "boolean",
+        "language": "string",
+        "model": "string",
+        "numerals": "boolean",
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        },
+        "tier": "string",
+        "version": "string",
+        "nonenglishmodel": "string"
+    },
+    "transcriptionMetadata": {
+        "channels": "bigint",
+        "created": "string",
+        "duplicate": "boolean",
+        "duplicate_id": "string",
+        "duration": "double",
+        "model_info": {
+            "8109a203-c6c9-413c-bb98-aaa40c9aac1c": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            }
+        },
+        "models": {
+            "type": "array",
+            "element": "string"
+        },
+        "processing_time": "double",
+        "request_id": "string",
+        "sha256": "string",
+        "status": "string"
+    },
+    "uploadTS": "timestamp",
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "__is_backfill": "boolean",
+    "numberOfNotes": "bigint",
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string"
+}

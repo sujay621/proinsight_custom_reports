@@ -1,0 +1,131 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "autoArchived": "boolean",
+    "_id": "string",
+    "acknowledgedBy": {
+        "type": "array",
+        "element": "string"
+    },
+    "adjustedScore": "bigint",
+    "agentName": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "autoFail": "boolean",
+    "callId": "string",
+    "callMetadata": {
+        "agentGroup": "string",
+        "campaign": "string",
+        "clientCode": "string",
+        "creditor": "string",
+        "service": "string",
+        "termCode": "string",
+        "borrowerState": "string",
+        "clientName": "string"
+    },
+    "callTime": "timestamp",
+    "createdAt": "timestamp",
+    "createdBy": "string",
+    "duration": "double",
+    "filename": "string",
+    "grade": "string",
+    "isAcknowledged": "boolean",
+    "isDirOutbound": "boolean",
+    "isLocked": "boolean",
+    "maxScore": "bigint",
+    "percentScore": "double",
+    "response": {
+        "type": "array",
+        "element": {
+            "maxScore": "bigint",
+            "questions": {
+                "type": "array",
+                "element": {
+                    "explanation": {
+                        "type": "array",
+                        "element": {
+                            "type": "array",
+                            "element": "string"
+                        }
+                    },
+                    "maxScore": "bigint",
+                    "score": "bigint",
+                    "value": "bigint"
+                }
+            },
+            "score": "bigint"
+        }
+    },
+    "score": "bigint",
+    "scorecardTemplateId": "string",
+    "__is_backfill": "boolean",
+    "edited": {
+        "editHistory": {
+            "type": "array",
+            "element": {
+                "adjustedScore": "bigint",
+                "autoFail": "boolean",
+                "createdAt": "timestamp",
+                "response": {
+                    "type": "array",
+                    "element": {
+                        "maxScore": "bigint",
+                        "questions": {
+                            "type": "array",
+                            "element": {
+                                "explanation": {
+                                    "type": "array",
+                                    "element": {
+                                        "type": "array",
+                                        "element": "string"
+                                    }
+                                },
+                                "maxScore": "bigint",
+                                "score": "bigint",
+                                "value": "string"
+                            }
+                        },
+                        "score": "bigint"
+                    }
+                },
+                "score": "bigint",
+                "username": "string"
+            }
+        },
+        "editedAt": "timestamp",
+        "editedBy": "string"
+    },
+    "lastAcknowledgedAt": "timestamp",
+    "lockedBy": "string",
+    "pdfExportDate": "timestamp",
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "disputedBy": {
+        "type": "array",
+        "element": {
+            "type": "array",
+            "element": "string"
+        }
+    },
+    "isDisputed": "boolean",
+    "lastDisputedAt": "string",
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string"
+}

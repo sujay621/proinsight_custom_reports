@@ -1,0 +1,3525 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "_id": "string",
+    "agent_id": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "audioFilePath": "string",
+    "audioMetadata": {
+        "audio-bitrate": "string",
+        "audio-duration": "double",
+        "audio-num-channels": "string",
+        "audio-sample-rate": "string",
+        "audio_type": "string",
+        "bitrate": "double",
+        "callRecordId": "string",
+        "duration": "double",
+        "filename": "string",
+        "num_channels": "bigint",
+        "sample_rate": "double",
+        "sha256": "string",
+        "sessionid": "string"
+    },
+    "audio_filepath": "string",
+    "borrower_id": "string",
+    "callMetadata": {
+        "_id": "string",
+        "account": "string",
+        "agency_name": "string",
+        "agent": "string",
+        "audio_filepath": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "downloadFailed": "boolean",
+        "downloadFailedReason": "string",
+        "ignore_dedupe_checks": "boolean",
+        "name": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "session": "string",
+        "sessionId": "string",
+        "termCode": "string",
+        "transferConnect": "string",
+        "transferDuration": "string",
+        "transferEnd": "string",
+        "audioMetadata": {
+            "audio-bitrate": "string",
+            "audio-duration": "double",
+            "audio-num-channels": "string",
+            "audio-sample-rate": "string",
+            "callRecordId": "string",
+            "duration": "double",
+            "sessionid": "string",
+            "sha256": "string"
+        },
+        "call_id": "string",
+        "downloadFile": "string"
+    },
+    "called_at": "timestamp",
+    "connector_id": "string",
+    "date": "string",
+    "dialerMetadata": {
+        "AGENT__RESULT": "string",
+        "_id": "string",
+        "account": "string",
+        "agent": "string",
+        "agentAssignment": "string",
+        "agentGroup": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "clientDetails": {
+            "Client__Number": "string"
+        },
+        "name": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "termCode": "string",
+        "agency_name": "string",
+        "audioMetadata": {
+            "audio-bitrate": "string",
+            "audio-duration": "double",
+            "audio-num-channels": "string",
+            "audio-sample-rate": "string",
+            "callRecordId": "string",
+            "duration": "double",
+            "sessionid": "string",
+            "sha256": "string"
+        },
+        "call_id": "string",
+        "downloadFailed": "boolean",
+        "downloadFailedReason": "string",
+        "downloadFile": "string",
+        "efsKey": "string",
+        "language": "string",
+        "s3Key": "string"
+    },
+    "download_basepath": "string",
+    "efsKey": "string",
+    "engine": "string",
+    "filename": "string",
+    "hasSpeakerInfo": "boolean",
+    "ignore_dedupe_checks": "boolean",
+    "isDirOutbound": "boolean",
+    "isDummyMetaData": "boolean",
+    "isTest": "boolean",
+    "numSearchResults": "bigint",
+    "orig_filename": "string",
+    "preferredMetadata": {
+        "accountNumber": "string",
+        "agentDisposition": "string",
+        "agentId": "string",
+        "audioFilename": "string",
+        "balance": "string",
+        "callCenterName": "string",
+        "callDateTime": "timestamp",
+        "callDirection": "bigint",
+        "campaign": "string",
+        "clientName": "string",
+        "consumerName": "string",
+        "phoneNumber": "string"
+    },
+    "rawEngineResult": {
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "start_index_word_array": {
+                                "type": "array",
+                                "element": "bigint"
+                            },
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "punctuated_word": "string",
+                                    "start": "double",
+                                    "word": "string",
+                                    "speaker": "bigint"
+                                }
+                            }
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "record_id": "string",
+    "redactionTimeSpanArray": {
+        "type": "array",
+        "element": "string"
+    },
+    "searchResult": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "eventType": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double",
+            "id": "string",
+            "source": "string",
+            "validationPassed": "boolean"
+        }
+    },
+    "sha256": "string",
+    "sha256_config": "string",
+    "source_id": "string",
+    "source_s3_key": "string",
+    "speakers": {
+        "agent": "bigint",
+        "borrower": "bigint"
+    },
+    "status": "string",
+    "tags": {
+        "type": "array",
+        "element": "string"
+    },
+    "talkMetrics": {
+        "agent": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "borrower": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "duration": {
+            "agent_talk_percentage": "double",
+            "borrower_talk_percentage": "double",
+            "streak_agent": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "streak_borrower": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "total_active_talk_time": "double",
+            "total_audio_duration": "double",
+            "total_duration_agent": "double",
+            "total_duration_borrower": "double",
+            "total_percent_silence": "double",
+            "total_talk_time": "double",
+            "total_time_silence": "double",
+            "total_utterances_agent": "bigint",
+            "total_utterances_borrower": "bigint",
+            "total_words_agent": "bigint",
+            "total_words_borrower": "bigint"
+        },
+        "max_overtalk_length": "double",
+        "max_pause_length": "double",
+        "max_streak_agent": "bigint",
+        "max_streak_borrower": "bigint",
+        "num_longpause": "bigint",
+        "num_pause": "bigint",
+        "percent_overtalk_length": "double",
+        "percent_silence_length": "double",
+        "talk_rate_agent": "double",
+        "talk_rate_borrower": "double",
+        "total_length_longpause": "double",
+        "total_length_pause": "double",
+        "total_overtalk_length": "double",
+        "track_longpause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_overtalk_timespan": {
+            "type": "array",
+            "element": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_pause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_talk_span_length": {
+            "type": "array",
+            "element": {
+                "etime": "double",
+                "span": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_longpause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_pause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        }
+    },
+    "tenant_id": "string",
+    "transcription": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "offset": "bigint",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcriptionConfig": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "diarizationFunction": "string",
+        "isDiarizationRequired": "boolean",
+        "language": "string",
+        "model": "string",
+        "numerals": "boolean",
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        },
+        "version": "string",
+        "speakerConfiguration": {
+            "agent": "bigint",
+            "borrower": "bigint"
+        },
+        "tier": "string"
+    },
+    "transcriptionMetadata": {
+        "channels": "bigint",
+        "created": "string",
+        "duplicate": "boolean",
+        "duplicate_id": "string",
+        "duration": "double",
+        "model_info": {
+            "8109a203-c6c9-413c-bb98-aaa40c9aac1c": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "1d02e01c-f076-44af-a314-cb6904b76912": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "66d31423-0768-4ef7-bb79-c5961ce2e7ec": {
+                "arch": "string",
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            },
+            "e66d44f0-c397-4ff1-9e65-794fb53131c4": {
+                "arch": "string",
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            }
+        },
+        "models": {
+            "type": "array",
+            "element": "string"
+        },
+        "processing_time": "double",
+        "request_id": "string",
+        "sha256": "string",
+        "status": "string",
+        "tags": {
+            "type": "array",
+            "element": "string"
+        },
+        "timeForTranscription": "double",
+        "transaction_key": "string"
+    },
+    "uploadTS": "timestamp",
+    "validation_status": {
+        "Call__Type": "string",
+        "account": "string",
+        "agency_name": "string",
+        "agent": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "name": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "session": "string",
+        "termCode": "string",
+        "transferConnect": "string",
+        "transferDuration": "string",
+        "transferEnd": "string"
+    },
+    "violation_status": "boolean",
+    "violations_20230907": {
+        "type": "array",
+        "element": "string"
+    },
+    "violations_20230908": {
+        "type": "array",
+        "element": "string"
+    },
+    "violations_20230909": {
+        "type": "array",
+        "element": "string"
+    },
+    "__rescued_data": "string",
+    "OLD_called_at": "string",
+    "OLD_filename": "string",
+    "OLD_orig_filename": "string",
+    "__extra_cols_with_spec_chars": "string",
+    "__publish_id": "double",
+    "agentName": "string",
+    "borrowerData": {
+        "borrower_id": "string",
+        "phone_number": "string"
+    },
+    "callScore": "bigint",
+    "language": "string",
+    "modifyHistory_1556046825": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556046857": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556046891": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556046915": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556046994": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047028": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047076": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047376": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047415": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047437": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047479": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047494": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047554": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047576": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047618": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047657": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047723": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047749": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047786": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047817": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047872": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047890": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556047923": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048012": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048039": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048075": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048132": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048162": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048196": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048219": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048277": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048305": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048370": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048410": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048460": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048492": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048545": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048564": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556048595": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556222084": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556226887": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556226909": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556530502": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556530506": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556533066": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556533081": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556533683": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556535058": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556612777": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556638868": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556639316": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556639336": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556639452": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556708444": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556708760": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556708979": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556709201": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556709387": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556709651": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1556709838": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1557138725": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1557139091": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1562695323": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1562695353": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1562695525": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1562700088": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1562700139": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1563281675": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "modifyHistory_1563281826": {
+        "fieldsEdited": {
+            "type": "array",
+            "element": "string"
+        },
+        "source": "string",
+        "user_email": "string"
+    },
+    "numSearchResults_1556530506": "bigint",
+    "numberOfNotes": "bigint",
+    "oldViolations": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "rawEngineResultArchiveFile": "string",
+    "rawEngineResult_1556530506": {
+        "metadata": {
+            "channels": "bigint",
+            "created": "string",
+            "duration": "double",
+            "request_id": "string",
+            "sha256": "string",
+            "timeForTranscription": "double",
+            "transaction_key": "string"
+        },
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "start": "double",
+                                    "word": "string"
+                                }
+                            }
+                        }
+                    },
+                    "search": {
+                        "type": "array",
+                        "element": {
+                            "hits": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "snippet": "string",
+                                    "start": "double"
+                                }
+                            },
+                            "query": "string"
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "res_id": "string",
+    "searchResult_1556226887": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556226909": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "id": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "start_time": "double",
+            "validationPassed": "boolean"
+        }
+    },
+    "searchResult_1556530506": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556533066": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556533081": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "id": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double",
+            "validationPassed": "boolean"
+        }
+    },
+    "searchResult_1556533683": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556535058": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556612777": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556638868": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1556639452": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1557138725": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1557139091": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1562695323": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1562695353": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1562695525": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1562700088": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1562700139": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "id": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double",
+            "validationPassed": "boolean"
+        }
+    },
+    "searchResult_1563281675": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double"
+        }
+    },
+    "searchResult_1563281826": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "id": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "source": "string",
+            "start_time": "double",
+            "validationPassed": "boolean"
+        }
+    },
+    "sha256_redacted": "string",
+    "taggingDone": "boolean",
+    "transcriptionConfig_1556530502": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "placeholder": "string",
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        }
+    },
+    "transcriptionConfig_1556530506": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "placeholder": "string",
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        }
+    },
+    "transcriptionMetadata_1556530506": {
+        "channels": "bigint",
+        "created": "string",
+        "duration": "double",
+        "request_id": "string",
+        "sha256": "string",
+        "timeForTranscription": "double",
+        "transaction_key": "string"
+    },
+    "transcription_1556046825": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556046857": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556046891": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556046915": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556046994": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047028": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047076": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047376": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047415": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047437": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047479": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047494": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047554": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047576": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047618": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047657": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047723": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047749": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047786": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047817": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047872": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047890": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556047923": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048012": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048039": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048075": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048132": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048162": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048196": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048219": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048277": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048305": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048370": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048410": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048460": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048492": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048545": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048564": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556048595": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556222084": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556530506": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556639316": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556639336": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556708444": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556708760": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556708979": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556709201": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556709387": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556709651": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcription_1556709838": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "violation_status_20190716": "boolean",
+    "violation_status_20190814": "boolean",
+    "violation_status_20190815": "boolean",
+    "violation_status_20190816": "boolean",
+    "violation_status_20190817": "boolean",
+    "violation_status_20190818": "boolean",
+    "violation_status_20190820": "boolean",
+    "violation_status_20190821": "boolean",
+    "violation_status_20190822": "boolean",
+    "violation_status_20190823": "boolean",
+    "violation_status_20190824": "boolean",
+    "violation_status_20190825": "boolean",
+    "violation_status_20190827": "boolean",
+    "violation_status_20190828": "boolean",
+    "violation_status_20190829": "boolean",
+    "violation_status_20190830": "boolean",
+    "violation_status_20190902": "boolean",
+    "violation_status_20190904": "boolean",
+    "violation_status_20190905": "boolean",
+    "violation_status_20190906": "boolean",
+    "violation_status_20190907": "boolean",
+    "violation_status_20190909": "boolean",
+    "violation_status_20190910": "boolean",
+    "violation_status_20190911": "boolean",
+    "violation_status_20190912": "boolean",
+    "violation_status_20190913": "boolean",
+    "violation_status_20190914": "boolean",
+    "violation_status_20190916": "boolean",
+    "violation_status_20190917": "boolean",
+    "violation_status_20190918": "boolean",
+    "violation_status_20190919": "boolean",
+    "violation_status_20190920": "boolean",
+    "violation_status_20190921": "boolean",
+    "violation_status_20190923": "boolean",
+    "violation_status_20190924": "boolean",
+    "violation_status_20190925": "boolean",
+    "violation_status_20190926": "boolean",
+    "violation_status_20190927": "boolean",
+    "violation_status_20190928": "boolean",
+    "violation_status_20190930": "boolean",
+    "violation_status_20191001": "boolean",
+    "violation_status_20191002": "boolean",
+    "violation_status_20191003": "boolean",
+    "violation_status_20191004": "boolean",
+    "violation_status_20191005": "boolean",
+    "violation_status_20191007": "boolean",
+    "violation_status_20191008": "boolean",
+    "violation_status_20191009": "boolean",
+    "violation_status_20191010": "boolean",
+    "violation_status_20191011": "boolean",
+    "violation_status_20191013": "boolean",
+    "violation_status_20191015": "boolean",
+    "violation_status_20191016": "boolean",
+    "violation_status_20191017": "boolean",
+    "violation_status_20191018": "boolean",
+    "violation_status_20191019": "boolean",
+    "violation_status_20191022": "boolean",
+    "violation_status_20191023": "boolean",
+    "violation_status_20191024": "boolean",
+    "violation_status_20191025": "boolean",
+    "violation_status_20191026": "boolean",
+    "violation_status_20191028": "boolean",
+    "violation_status_20191029": "boolean",
+    "violation_status_20191030": "boolean",
+    "violation_status_20191031": "boolean",
+    "violation_status_20191101": "boolean",
+    "violation_status_20191102": "boolean",
+    "violation_status_20191104": "boolean",
+    "violation_status_20191105": "boolean",
+    "violation_status_20191106": "boolean",
+    "violation_status_20191107": "boolean",
+    "violation_status_20191109": "boolean",
+    "violation_status_20191111": "boolean",
+    "violation_status_20191112": "boolean",
+    "violation_status_20191113": "boolean",
+    "violation_status_20191114": "boolean",
+    "violation_status_20191115": "boolean",
+    "violation_status_20191116": "boolean",
+    "violation_status_20191118": "boolean",
+    "violation_status_20191119": "boolean",
+    "violation_status_20191120": "boolean",
+    "violation_status_20191121": "boolean",
+    "violation_status_20191122": "boolean",
+    "violation_status_20191123": "boolean",
+    "violation_status_20191125": "boolean",
+    "violation_status_20191126": "boolean",
+    "violation_status_20191127": "boolean",
+    "violation_status_20191128": "boolean",
+    "violation_status_20191203": "boolean",
+    "violation_status_20191204": "boolean",
+    "violation_status_20191205": "boolean",
+    "violation_status_20191206": "boolean",
+    "violation_status_20191207": "boolean",
+    "violation_status_20191209": "boolean",
+    "violation_status_20191210": "boolean",
+    "violation_status_20191211": "boolean",
+    "violation_status_20191212": "boolean",
+    "violation_status_20191213": "boolean",
+    "violation_status_20191214": "boolean",
+    "violation_status_20191216": "boolean",
+    "violation_status_20191217": "boolean",
+    "violation_status_20191218": "boolean",
+    "violation_status_20191219": "boolean",
+    "violation_status_20191220": "boolean",
+    "violation_status_20191221": "boolean",
+    "violation_status_20191223": "boolean",
+    "violation_status_20191224": "boolean",
+    "violation_status_20191225": "boolean",
+    "violation_status_20191227": "boolean",
+    "violation_status_20191230": "boolean",
+    "violation_status_20191231": "boolean",
+    "violation_status_20200101": "boolean",
+    "violation_status_20200103": "boolean",
+    "violation_status_20200104": "boolean",
+    "violation_status_20200106": "boolean",
+    "violation_status_20200107": "boolean",
+    "violation_status_20200108": "boolean",
+    "violation_status_20200109": "boolean",
+    "violation_status_20200110": "boolean",
+    "violation_status_20200111": "boolean",
+    "violation_status_20200113": "boolean",
+    "violation_status_20200114": "boolean",
+    "violation_status_20200115": "boolean",
+    "violation_status_20200116": "boolean",
+    "violation_status_20200117": "boolean",
+    "violation_status_20200118": "boolean",
+    "violation_status_20200120": "boolean",
+    "violation_status_20200121": "boolean",
+    "violation_status_20200122": "boolean",
+    "violation_status_20200123": "boolean",
+    "violation_status_20200124": "boolean",
+    "violation_status_20200125": "boolean",
+    "violation_status_20200127": "boolean",
+    "violation_status_20200128": "boolean",
+    "violation_status_20200129": "boolean",
+    "violation_status_20200130": "boolean",
+    "violation_status_20200131": "boolean",
+    "violation_status_20200201": "boolean",
+    "violation_status_20200204": "boolean",
+    "violation_status_20200205": "boolean",
+    "violation_status_20200206": "boolean",
+    "violation_status_20200207": "boolean",
+    "violation_status_20200208": "boolean",
+    "violation_status_20200210": "boolean",
+    "violation_status_20200211": "boolean",
+    "violation_status_20200212": "boolean",
+    "violation_status_20200213": "boolean",
+    "violation_status_20200214": "boolean",
+    "violation_status_20200215": "boolean",
+    "violation_status_20200217": "boolean",
+    "violation_status_20200218": "boolean",
+    "violation_status_20200219": "boolean",
+    "violation_status_20200220": "boolean",
+    "violation_status_20200221": "boolean",
+    "violation_status_20200222": "boolean",
+    "violation_status_20200224": "boolean",
+    "violation_status_20200225": "boolean",
+    "violation_status_20200302": "boolean",
+    "violation_status_20200303": "boolean",
+    "violation_status_20200304": "boolean",
+    "violations_20190716": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190722": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190814": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190815": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190816": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190817": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190818": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190820": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190821": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190822": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190823": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190824": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190825": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190827": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190828": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190829": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190830": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190902": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190904": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190905": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190906": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190907": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190909": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190910": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190911": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190912": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190913": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190914": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190916": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190917": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190918": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190919": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190920": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190921": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190923": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190924": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190925": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190926": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190927": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190928": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20190930": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191001": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191002": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191003": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191004": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191005": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191007": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191008": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191009": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191010": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191011": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191013": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191015": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191016": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191017": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191018": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191019": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191022": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191023": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191024": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191025": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191026": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191028": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191029": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191030": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191031": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191101": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191102": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191104": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191105": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191106": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191107": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191109": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191111": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191112": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191113": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191114": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191115": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191116": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191118": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191119": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191120": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191121": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191122": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191123": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191125": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191126": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191127": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191128": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191203": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191204": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191205": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191206": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191207": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191209": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191210": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191211": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191212": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191213": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191214": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191216": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191217": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191218": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191219": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191220": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191221": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191223": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191225": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191227": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191230": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20191231": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200101": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200103": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200104": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200106": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200107": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200108": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200109": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200110": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200111": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200113": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200114": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200115": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200116": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200117": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200118": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200120": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200121": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200122": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200123": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200124": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200125": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200127": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200128": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200129": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200130": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200131": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200201": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200204": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200205": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200206": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200207": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200208": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200210": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200211": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200212": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200213": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200214": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200215": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200217": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200218": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200219": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200220": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200221": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200222": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200224": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200225": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200302": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200303": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_20200304": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "violations_spanish_20190501": {
+        "type": "array",
+        "element": {
+            "count": "bigint",
+            "name": "string"
+        }
+    },
+    "wasMMDviolationTag": "boolean",
+    "__is_backfill": "boolean",
+    "__is_corrupt_data": "boolean",
+    "__extra_fields": "string",
+    "autoArchived": "boolean",
+    "intentEngineResult": {
+        "accountExplorer": {
+            "I2540": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2550": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2560": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2570": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2580": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2590": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1000": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1010": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1020": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1030": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1040": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1050": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1060": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1070": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1080": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1090": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1100": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1110": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1120": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1130": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1140": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1150": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1160": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1170": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            }
+        }
+    },
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string"
+}

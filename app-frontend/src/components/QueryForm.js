@@ -10,7 +10,7 @@ import EmailDialog from './EmailDialog';
 
 function QueryForm({ setResults, setError }) {
     const [prompt, setPrompt] = useState('');
-    const { results, error, loading, executeQuery } = useQuery();
+    const { results, error, loading, generatedSQL, executeQuery } = useQuery();
     const { selectedTenant } = useTenant();
     const [openSendDialog, setOpenSendDialog] = useState(false);
     const [openScheduleDialog, setOpenScheduleDialog] = useState(false);
@@ -19,22 +19,18 @@ function QueryForm({ setResults, setError }) {
         { column: "agent_id", type: "string", description: "Unique identifier for each agent" },
     ];
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!selectedTenant) {
             setError('Please select a tenant first');
             return;
         }
-        const hardcodedQuery = `
-            SELECT agent_id, 
-                   count(*) as Answering_Machine 
-            FROM main.samudra_v2_silver.voice_mvp_alliancerevcycle__call_data 
-            WHERE called_at > '2024-12-01' 
-            AND called_at < '2025-01-02' 
-            AND ARRAY_CONTAINS(tags, 'generic/Answering Machine') 
-            GROUP BY agent_id
-        `;
-        executeQuery(hardcodedQuery);
+        if (!prompt.trim()) {
+            setError('Please enter a prompt');
+            return;
+        }
+
+        await executeQuery(prompt, selectedTenant);
     };
 
     useEffect(() => {
@@ -42,12 +38,10 @@ function QueryForm({ setResults, setError }) {
         setError(error);
     }, [results, error, setResults, setError]);
 
-    const isValidTenant = selectedTenant && selectedTenant !== "";
-
     return (
         <Container maxWidth="lg" sx={{ mt: 4 }}>
             <Box sx={{ mb: 3 }}>
-                {!isValidTenant && (
+                {!selectedTenant && (
                     <Typography color="error">
                         Please select a tenant to proceed
                     </Typography>
@@ -65,12 +59,27 @@ function QueryForm({ setResults, setError }) {
                             setPrompt={setPrompt} 
                             handleSubmit={handleSubmit} 
                             loading={loading}
-                            disabled={!isValidTenant}
+                            disabled={!selectedTenant}
                         />
                     </Paper>
                 </Box>
                 <Box sx={{ flex: 1 }}>
-                    <Paper sx={{ p: 2, opacity: isValidTenant ? 1 : 0.5 }}>
+                    <Paper sx={{ p: 2, opacity: selectedTenant ? 1 : 0.5 }}>
+                        {generatedSQL && (
+                            <Box sx={{ mb: 3 }}>
+                                <Typography variant="h6" gutterBottom>
+                                    Generated SQL Query
+                                </Typography>
+                                <pre style={{ 
+                                    backgroundColor: '#f5f5f5',
+                                    padding: '1rem',
+                                    borderRadius: '4px',
+                                    overflowX: 'auto'
+                                }}>
+                                    {generatedSQL}
+                                </pre>
+                            </Box>
+                        )}
                         <Typography variant="h6" gutterBottom>
                             List Metadata
                         </Typography>

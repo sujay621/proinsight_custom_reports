@@ -1,14 +1,18 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from databricks import sql
-from .config.Databricks_connection import (
+from Databricks_connection import (
     DATABRICKS_SERVER_HOSTNAME,
     DATABRICKS_ACCESS_TOKEN,
     HTTP_PATH,
 )
+from llm_helpers import LLMHelper
 from fastapi.middleware.cors import CORSMiddleware
+from utils.utils import get_llm_prompt
+from typing import Dict, Any, List
+import yaml
+from pathlib import Path
 from .config.mongodb_connection import get_db
-from typing import List
 
 app = FastAPI()
 
@@ -25,6 +29,7 @@ app.add_middleware(
 # Input model for the query
 class QueryRequest(BaseModel):
     query: str
+    tenant: str | None = None
 
 
 @app.post("/execute-query")
@@ -86,6 +91,61 @@ class TenantResponse(BaseModel):
 
 # Global variable to store current tenant
 current_tenant = {"name": None}
+
+
+# convert prompt to sql query
+@app.post("/fetch-query")
+async def fetch_query(request: QueryRequest):
+    if not request.query or not request.query.strip():
+        raise HTTPException(status_code=400, detail="Prompt cannot be empty")
+
+    # Get current tenant context
+    if not request.tenant:
+        raise HTTPException(status_code=400, detail="Tenant must be specified")
+    tenant = request.tenant
+
+    try:
+        # Load prompt config
+        config_path = Path("config/model.yaml")
+        if not config_path.exists():
+            raise HTTPException(
+                status_code=500, detail="Model configuration file not found"
+            )
+
+        try:
+            with open(config_path, "r") as f:
+                prompt_config = yaml.safe_load(f)
+        except yaml.YAMLError as e:
+            raise HTTPException(
+                status_code=500, detail=f"Error parsing model configuration: {str(e)}"
+            )
+
+        # Generate LLM prompt and SQL query
+        try:
+            llm_prompt = get_llm_prompt(request.query, request.tenant)
+        except (FileNotFoundError, ValueError) as e:
+            raise HTTPException(
+                status_code=400, detail=f"Error generating prompt: {str(e)}"
+            )
+
+        try:
+            llm_helper = LLMHelper()
+            sql_query = llm_helper.get_sql_query(prompt_config, llm_prompt)
+        except Exception as e:
+            raise HTTPException(
+                status_code=500, detail=f"Error generating SQL query with LLM: {str(e)}"
+            )
+
+        return {
+            "original_prompt": request.query,
+            "generated_sql": sql_query,
+            "tenant": request.tenant,
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Error generating SQL query: {str(e)}"
+        )
 
 
 @app.get("/current-tenant", response_model=TenantResponse)

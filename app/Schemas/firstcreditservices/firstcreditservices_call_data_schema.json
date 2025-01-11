@@ -1,0 +1,773 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "_id": "string",
+    "agent_id": "string",
+    "allowedRoles": {
+        "type": "array",
+        "element": "string"
+    },
+    "audioFilePath": "string",
+    "audioMetadata": {
+        "audio-bitrate": "string",
+        "audio-duration": "double",
+        "audio-num-channels": "string",
+        "audio-sample-rate": "string",
+        "audio_type": "string",
+        "bitrate": "double",
+        "callRecordId": "string",
+        "duration": "double",
+        "filename": "string",
+        "num_channels": "bigint",
+        "sample_rate": "double",
+        "sha256": "string"
+    },
+    "audio_filepath": "string",
+    "borrower_id": "string",
+    "callMetadata": {
+        "_id": "string",
+        "account": "string",
+        "agency_name": "string",
+        "agent": "string",
+        "audio_filepath": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "downloadFailed": "boolean",
+        "downloadFailedReason": "string",
+        "ignore_dedupe_checks": "boolean",
+        "name": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "session": "string",
+        "sessionId": "string",
+        "termCode": "string",
+        "transferConnect": "string",
+        "transferDuration": "string",
+        "transferEnd": "string",
+        "audioMetadata": {
+            "audio-bitrate": "string",
+            "audio-duration": "double",
+            "audio-num-channels": "string",
+            "audio-sample-rate": "string",
+            "callRecordId": "string",
+            "duration": "double",
+            "sha256": "string"
+        },
+        "efsKey": "string",
+        "s3Key": "string"
+    },
+    "called_at": "timestamp",
+    "connector_id": "string",
+    "date": "string",
+    "dialerMetadata": {
+        "AGENT__RESULT": "string",
+        "_id": "string",
+        "account": "string",
+        "agency_name": "string",
+        "agent": "string",
+        "agentGroup": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "clientDetails": {
+            "Client__Number": "string"
+        },
+        "name": "string",
+        "origTermCode": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "session": "string",
+        "sessionId": "string",
+        "termCode": "string",
+        "transferConnect": "string",
+        "transferDuration": "string",
+        "transferEnd": "string",
+        "audioMetadata": {
+            "audio-bitrate": "string",
+            "audio-duration": "double",
+            "audio-num-channels": "string",
+            "audio-sample-rate": "string",
+            "callRecordId": "string",
+            "duration": "double",
+            "sha256": "string"
+        },
+        "downloadFailed": "boolean",
+        "downloadFailedReason": "string"
+    },
+    "download_basepath": "string",
+    "efsKey": "string",
+    "engine": "string",
+    "filename": "string",
+    "hasSpeakerInfo": "boolean",
+    "ignore_dedupe_checks": "boolean",
+    "intentEngineResult": {
+        "accountExplorer": {
+            "do_not_call": {
+                "dncResult": {
+                    "dncLabel": "bigint",
+                    "posSpans": {
+                        "type": "array",
+                        "element": {
+                            "proba": "double",
+                            "span": "string"
+                        }
+                    }
+                }
+            },
+            "obtained_consent_to_callback": {
+                "askedForConsentToCallbackResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                },
+                "obtainedConsentToCallbackResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "obtained_consent_to_email": {
+                "askedForConsentToEmailResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                },
+                "obtainedConsentToEmailResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "right_party_check": {
+                "rpcResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "sentiment": {
+                "call_score": {
+                    "sentiment_agent": "bigint",
+                    "sentiment_borrower": "bigint"
+                },
+                "request_id": "string",
+                "utterance_score": {
+                    "type": "array",
+                    "element": {
+                        "sentiment": {
+                            "negative": "double",
+                            "neutral": "double",
+                            "positive": "double",
+                            "prediction": "string"
+                        },
+                        "speaker": "string",
+                        "text": "string"
+                    }
+                }
+            },
+            "unemployed_check": {
+                "unemployedResult": {
+                    "fullResult": {
+                        "type": "array",
+                        "element": "string"
+                    },
+                    "status": "boolean"
+                }
+            },
+            "I2540": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2550": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2560": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2570": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2580": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I2590": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1000": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1010": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1020": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1030": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1040": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1050": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1060": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1070": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1080": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1090": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1100": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            },
+            "I1110": {
+                "fullResult": {
+                    "attributes": "string",
+                    "channel": "string",
+                    "end": "double",
+                    "event_id": "string",
+                    "match": "string",
+                    "start": "double"
+                },
+                "predictedLabel": "boolean"
+            }
+        }
+    },
+    "isDirOutbound": "boolean",
+    "isDummyMetaData": "boolean",
+    "isRedactionProcessed": "boolean",
+    "isTest": "boolean",
+    "numSearchResults": "bigint",
+    "orig_filename": "string",
+    "preferredMetadata": {
+        "accountNumber": "string",
+        "agentDisposition": "string",
+        "agentId": "string",
+        "audioFilename": "string",
+        "balance": "string",
+        "callCenterName": "string",
+        "callDateTime": "timestamp",
+        "callDirection": "bigint",
+        "campaign": "string",
+        "clientName": "string",
+        "consumerName": "string",
+        "phoneNumber": "string"
+    },
+    "published_ts": "timestamp",
+    "rawEngineResult": {
+        "results": {
+            "channels": {
+                "type": "array",
+                "element": {
+                    "alternatives": {
+                        "type": "array",
+                        "element": {
+                            "confidence": "double",
+                            "start_index_word_array": {
+                                "type": "array",
+                                "element": "bigint"
+                            },
+                            "transcript": "string",
+                            "words": {
+                                "type": "array",
+                                "element": {
+                                    "confidence": "double",
+                                    "end": "double",
+                                    "punctuated_word": "string",
+                                    "start": "double",
+                                    "word": "string"
+                                }
+                            }
+                        }
+                    },
+                    "utterances": {
+                        "type": "array",
+                        "element": "bigint"
+                    }
+                }
+            }
+        }
+    },
+    "record_id": "string",
+    "redactionTimeSpanArray": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "stime": "double"
+        }
+    },
+    "searchResult": {
+        "type": "array",
+        "element": {
+            "channel_number": "bigint",
+            "check": "string",
+            "checkDisplayName": "string",
+            "confidence": "double",
+            "display_phrase": "string",
+            "end_time": "double",
+            "eventType": "string",
+            "isDisplay": "boolean",
+            "isOutsideTimeBound": "boolean",
+            "phrase": "string",
+            "snippet": "string",
+            "snippet_id": "string",
+            "start_time": "double"
+        }
+    },
+    "sha256": "string",
+    "sha256_config": "string",
+    "sha256_redacted": "string",
+    "source_id": "string",
+    "source_s3_key": "string",
+    "speakers": {
+        "agent": "bigint",
+        "borrower": "bigint"
+    },
+    "status": "string",
+    "tags": {
+        "type": "array",
+        "element": "string"
+    },
+    "talkMetrics": {
+        "agent": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "borrower": {
+            "track_count_overtalk": "bigint",
+            "track_maxovertalk_length": "double",
+            "track_maxtimespan_overtalk": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            },
+            "track_overtalk_length": {
+                "type": "array",
+                "element": "string"
+            },
+            "track_overtalk_timespan": {
+                "type": "array",
+                "element": {
+                    "channel": "string",
+                    "duration": "double",
+                    "etime": "double",
+                    "stime": "double"
+                }
+            },
+            "track_percenttime_overtalk": "double",
+            "track_totaltime_overtalk": "double"
+        },
+        "duration": {
+            "agent_talk_percentage": "double",
+            "borrower_talk_percentage": "double",
+            "streak_agent": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "streak_borrower": {
+                "type": "array",
+                "element": {
+                    "etime": "double",
+                    "num_words": "bigint",
+                    "stime": "double",
+                    "streak_duration": "double"
+                }
+            },
+            "total_active_talk_time": "double",
+            "total_audio_duration": "double",
+            "total_duration_agent": "double",
+            "total_duration_borrower": "double",
+            "total_percent_silence": "double",
+            "total_talk_time": "double",
+            "total_time_silence": "double",
+            "total_utterances_agent": "bigint",
+            "total_utterances_borrower": "bigint",
+            "total_words_agent": "bigint",
+            "total_words_borrower": "bigint"
+        },
+        "max_overtalk_length": "double",
+        "max_pause_length": "double",
+        "max_streak_agent": "bigint",
+        "max_streak_borrower": "bigint",
+        "num_longpause": "bigint",
+        "num_pause": "bigint",
+        "percent_overtalk_length": "double",
+        "percent_silence_length": "double",
+        "talk_rate_agent": "double",
+        "talk_rate_borrower": "double",
+        "total_length_longpause": "double",
+        "total_length_pause": "double",
+        "total_overtalk_length": "double",
+        "track_longpause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_overtalk_timespan": {
+            "type": "array",
+            "element": {
+                "channel": "string",
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_pause_length": {
+            "type": "array",
+            "element": "double"
+        },
+        "track_talk_span_length": {
+            "type": "array",
+            "element": {
+                "etime": "double",
+                "span": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_longpause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        },
+        "track_time_pause_span": {
+            "type": "array",
+            "element": {
+                "duration": "double",
+                "etime": "double",
+                "stime": "double"
+            }
+        }
+    },
+    "tenant_id": "string",
+    "transcription": {
+        "type": "array",
+        "element": {
+            "etime": "double",
+            "offset": "bigint",
+            "speaker": "bigint",
+            "stime": "double",
+            "text": "string"
+        }
+    },
+    "transcriptionConfig": {
+        "checks": {
+            "type": "array",
+            "element": {
+                "displayName": "string",
+                "isPositive": "boolean",
+                "multiple": "boolean",
+                "name": "string",
+                "phrases": {
+                    "type": "array",
+                    "element": "string"
+                },
+                "speaker": "string",
+                "time": {
+                    "begin": "bigint",
+                    "end": "bigint",
+                    "isFromEnd": "boolean"
+                }
+            }
+        },
+        "diarizationFunction": "string",
+        "isDiarizationRequired": "boolean",
+        "language": "string",
+        "model": "string",
+        "numerals": "boolean",
+        "specificWords": {
+            "type": "array",
+            "element": "string"
+        },
+        "version": "string",
+        "diarize": "boolean",
+        "speakerConfiguration": {
+            "agent": "bigint",
+            "borrower": "bigint"
+        },
+        "tier": "string",
+        "nonenglishmodel": "string"
+    },
+    "transcriptionMetadata": {
+        "channels": "bigint",
+        "created": "string",
+        "duplicate": "boolean",
+        "duplicate_id": "string",
+        "duration": "double",
+        "model_info": {
+            "8109a203-c6c9-413c-bb98-aaa40c9aac1c": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "1d02e01c-f076-44af-a314-cb6904b76912": {
+                "arch": "string",
+                "name": "string",
+                "version": "string"
+            },
+            "66d31423-0768-4ef7-bb79-c5961ce2e7ec": {
+                "arch": "string",
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            },
+            "e66d44f0-c397-4ff1-9e65-794fb53131c4": {
+                "name": "string",
+                "tier": "string",
+                "version": "string"
+            }
+        },
+        "models": {
+            "type": "array",
+            "element": "string"
+        },
+        "processing_time": "double",
+        "request_id": "string",
+        "sha256": "string",
+        "status": "string",
+        "tags": {
+            "type": "array",
+            "element": "string"
+        }
+    },
+    "uploadTS": "timestamp",
+    "validation_status": {
+        "Call__Type": "string",
+        "account": "string",
+        "agency_name": "string",
+        "agent": "string",
+        "callCenterId": "string",
+        "campaign": "string",
+        "name": "string",
+        "phone": "string",
+        "recordingId": "string",
+        "service": "string",
+        "serviceId": "string",
+        "session": "string",
+        "sessionId": "string",
+        "termCode": "string",
+        "transferConnect": "string",
+        "transferDuration": "string",
+        "transferEnd": "string",
+        "Agent__First__Name": "string",
+        "Agent__Group": "string",
+        "Agent__ID": "string",
+        "Agent__Last__Name": "string",
+        "Agent's__Hunt__Group": "string",
+        "An__Agent__Call__Response": "string",
+        "Borrower__Number": "string"
+    },
+    "__rescued_data": "string",
+    "__extra_cols_with_spec_chars": "string",
+    "language": "string",
+    "numberOfNotes": "bigint",
+    "__is_backfill": "boolean",
+    "__extra_fields": "string",
+    "__is_corrupt_data": "boolean",
+    "autoArchived": "boolean",
+    "customFilename": "string",
+    "__corrupt_json_reason": "string",
+    "scores": {
+        "sentimentScore": {
+            "agent_sentiment_score": "double",
+            "borrower_sentiment_score": "double"
+        }
+    },
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    },
+    "__duplicates_in_a_record": "string",
+    "__extra_fields_dot_notation": "string",
+    "__extra_fields_bson": "string",
+    "__job_type": "string"
+}
