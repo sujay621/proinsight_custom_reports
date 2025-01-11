@@ -29,12 +29,14 @@ def get_llm_prompt(user_prompt, tenant):
         call_data_schema_path = schema_path / f"{tenant}_call_data_schema.json"
         scorecard_responses_schema_path = schema_path / f"{tenant}_scorecard_responses_schema.json"
         scorecard_templates_schema_path = schema_path / f"{tenant}_scorecard_templates_schema.json"
+        tags_schema_path = schema_path / f"{tenant}_tags_schema.json"
 
         # Verify all required schema files exist
         if not all(path.exists() for path in [
             call_data_schema_path,
             scorecard_responses_schema_path,
-            scorecard_templates_schema_path
+            scorecard_templates_schema_path,
+            tags_schema_path
         ]):
             raise FileNotFoundError(
                 f"One or more schema files missing for tenant {tenant} in {schema_path}"
@@ -47,12 +49,14 @@ def get_llm_prompt(user_prompt, tenant):
             scorecard_responses_schema = json.load(f)
         with open(scorecard_templates_schema_path) as f:
             scorecard_templates_schema = json.load(f)
+        with open(tags_schema_path) as f:
+            tags_schema = json.load(f)
 
         # Define table names
         call_data_table = f"main.samudra_v2_silver.voice_mvp_{tenant}__call_data"
         scorecard_responses_table = f"main.samudra_v2_silver.voice_mvp_{tenant}__scorecard_responses"
         scorecard_templates_table = f"main.samudra_v2_silver.voice_mvp_{tenant}__scorecard_templates"
-
+        tags_table = f"main.samudra_v2_silver.voice_mvp_{tenant}__tags"
         return f"""You are a SQL query expert. You are given three tables and their schema. You need to generate a SQL query that will return the data which is relevant to the USER QUERY.
         
         USER QUERY: {user_prompt}
@@ -62,13 +66,17 @@ def get_llm_prompt(user_prompt, tenant):
         2. Use {scorecard_responses_table} to fetch the scorecard level details. But note that the {scorecard_responses_table} only contains the answers for a scorecard and to find the questions use {scorecard_templates_table}.
         3. If you ever require to join {call_data_table} and {scorecard_responses_table} then you can join using '_id' field of {call_data_table} and 'callID' field of {scorecard_responses_table}.
         4. If you ever require to join {scorecard_responses_table} and {scorecard_templates_table} then you can join using 'scorecardTemplateId' field of {scorecard_responses_table} and  '_id' of {scorecard_templates_table}.
-
+        5. If someone refers to a tag, you can query ‘tags’ field in the {call_data_table}.
+        6. Many times user doesn’t know exact tag _id. So first you need a best guess to find the ‘_id’ from the {tags_table} for the rough tag names provided by the user. Then you can use these _id to query the tables. For example if user mentions ‘wrong party’ tag, the exact tag ‘_id’ should be ‘generic/Wrong Party’.
+        7. When user mentions anything about a scorecard it means they are referring to scorecard responses. Scorecard templates is just a template of questions(it should just be used to fetch the questions). And scorecard responses are the answers to those questions.
+        
         **Tables and Schemas**:
         {call_data_table}: {call_data_schema},
         {scorecard_responses_table}: {scorecard_responses_schema},
-        {scorecard_templates_table}: {scorecard_templates_schema}
+        {scorecard_templates_table}: {scorecard_templates_schema},
+        {tags_table}: {tags_schema}
 
-        **Output**: Just give the SQL query and nothing else. I don't need any other information.
+        **Output**:  Just give the query, I don’t need any other information. Always re-ensure that the query is correct by validating the field from the schema and will return the data as per the user query.
         """
 
     except FileNotFoundError as e:

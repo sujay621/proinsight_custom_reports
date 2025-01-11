@@ -1,0 +1,33 @@
+{
+    "__mongodb__id": "string",
+    "__mongodb__timestamp": "bigint",
+    "__mongodb__timestamp_i": "int",
+    "__mongodb__action": "string",
+    "__bronze_ingestion_time": "bigint",
+    "__extra_fields": "string",
+    "__extra_fields_bson": "string",
+    "__extra_fields_dot_notation": "string",
+    "__duplicates_in_a_record": "string",
+    "__is_backfill": "string",
+    "__job_type": "string",
+    "__rescued_data": "string",
+    "__is_corrupt_data": "boolean",
+    "_id": "string",
+    "color": "string",
+    "createdat": "timestamp",
+    "createdby": "string",
+    "description": "string",
+    "displaypriority": "bigint",
+    "group": "string",
+    "name": "string",
+    "type": "string",
+    "__corrupt_json_reason": "string",
+    "__corrupt_data_reason": {
+        "type": "array",
+        "element": {
+            "field_name": "string",
+            "current_type": "string",
+            "expected_type": "string"
+        }
+    }
+}
