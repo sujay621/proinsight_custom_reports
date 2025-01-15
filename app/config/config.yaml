@@ -1,6 +1,6 @@
 aws:
   region: "us-east-2"
   ssm_param_name: 
-    openai: "/solution/tag-benchmarking/openai-key"
-    anthropic: "/solution/tag-benchmarking/anthropic-key"
-    gemini: "/solution/tag-benchmarking/gemini-key"
+    openai: ""
+    anthropic: ""
+    gemini: ""
