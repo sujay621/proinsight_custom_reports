@@ -36,7 +36,7 @@ app.add_middleware(
 
 # Input model for the query
 class QueryRequest(BaseModel):
-    query: str
+    prompt: str
     tenant: str | None = None
 
 
@@ -104,7 +104,7 @@ current_tenant = {"name": None}
 # convert prompt to sql query
 @app.post("/fetch-query")
 async def fetch_query(request: QueryRequest):
-    if not request.query or not request.query.strip():
+    if not request.prompt or not request.prompt.strip():
         raise HTTPException(status_code=400, detail="Prompt cannot be empty")
 
     # Get current tenant context
@@ -130,7 +130,7 @@ async def fetch_query(request: QueryRequest):
 
         # Generate LLM prompt and SQL query
         try:
-            llm_prompt = get_llm_prompt(request.query, request.tenant)
+            llm_prompt = get_llm_prompt(request.prompt, request.tenant)
         except (FileNotFoundError, ValueError) as e:
             raise HTTPException(
                 status_code=400, detail=f"Error generating prompt: {str(e)}"
@@ -145,7 +145,7 @@ async def fetch_query(request: QueryRequest):
             )
 
         return {
-            "original_prompt": request.query,
+            "original_prompt": request.prompt,
             "generated_sql": sql_query,
             "tenant": request.tenant,
         }
